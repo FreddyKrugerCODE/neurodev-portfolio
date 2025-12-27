@@ -1,22 +1,213 @@
 ---
-import Layout from '../layouts/Layout.astro';
+// NeuroDev AI - Magento 2 Specialist Page
+// Engineered for Search Dominance and Technical Authority
+
+const services = [
+  {
+    title: "Performance Tuning",
+    desc: "Sub-second TTFB optimization. We harden your Varnish/Redis stack and refactor bloated database queries to hit 90+ Mobile Lighthouse scores.",
+    icon: "zap",
+    ariaLabel: "Visual representation of sub-second performance tuning"
+  },
+  {
+    title: "Enterprise Migrations",
+    desc: "Seamless data orchestration from M1, Shopify, or BigCommerce into a high-availability Magento 2 ecosystem with zero SEO equity loss.",
+    icon: "layers",
+    ariaLabel: "Icon representing seamless data migration layers"
+  },
+  {
+    title: "Headless Architectures",
+    desc: "Decoupling the frontend using PWA Studio, Vue Storefront, or custom React layers for an app-like commerce experience.",
+    icon: "cpu",
+    ariaLabel: "Microchip icon representing headless commerce architecture"
+  },
+  {
+    title: "ERP/OMS Integration",
+    desc: "Deep-level integration with NetSuite, SAP, and custom inventory systems via robust, asynchronous API modules.",
+    icon: "terminal",
+    ariaLabel: "Command line icon representing deep ERP and system integration"
+  }
+];
+
+const schemaData = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "Magento 2 Development",
+  "provider": {
+    "@type": "ProfessionalService",
+    "name": "NeuroDev AI"
+  },
+  "areaServed": "Global",
+  "description": "Enterprise-grade Magento 2 engineering, performance optimization, and custom module development for high-volume e-commerce."
+};
 ---
-<Layout title="Magento 2 Specialist" description="Technical Magento 2 development and speed optimization.">
-    <main class="pt-40 px-6 max-w-7xl mx-auto">
-        <div class="border-l-4 border-blue-600 pl-8 mb-20">
-            <h1 class="text-5xl md:text-7xl font-black text-white mb-6">MAGENTO 2 <br/> ENGINEERING.</h1>
-            <p class="text-xl text-slate-400 max-w-xl">From complex migrations to custom checkout logic, we handle the technical debt others can't solve.</p>
-        </div>
-        
-        <div class="grid md:grid-cols-2 gap-12 py-20">
-            <div class="p-8 bg-white/5 rounded-3xl border border-white/5">
-                <h3 class="text-white font-bold text-xl mb-4">Speed Optimization</h3>
-                <p>Improving Core Web Vitals and server response times for maximum SEO impact.</p>
-            </div>
-            <div class="p-8 bg-white/5 rounded-3xl border border-white/5">
-                <h3 class="text-white font-bold text-xl mb-4">Custom Module Dev</h3>
-                <p>Building proprietary logic to fit your specific business requirements.</p>
-            </div>
-        </div>
-    </main>
-</Layout>
+
+<html lang="en" class="scroll-smooth">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		
+		<!-- SENIOR SEO: Primary Meta Tags -->
+		<title>Magento 2 Engineering | Enterprise E-commerce Optimization Specialist</title>
+		<meta name="title" content="Magento 2 Engineering | Enterprise E-commerce Optimization Specialist" />
+		<meta name="description" content="Dominate your niche with high-performance Magento 2 development. Specialized in 90+ Lighthouse scores, headless commerce, and secure enterprise ERP integrations." />
+		<link rel="canonical" href="https://neurodevai.com/magento" />
+		<meta name="robots" content="index, follow" />
+
+		<!-- SENIOR SEO: Open Graph / Facebook -->
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content="https://neurodevai.com/magento" />
+		<meta property="og:title" content="Magento 2 Engineering | Enterprise E-commerce Optimization Specialist" />
+		<meta property="og:description" content="Architecting conversion-centric Magento experiences with sub-second load times and neural-led automation." />
+		<meta property="og:image" content="https://neurodevai.com/og-magento.jpg" />
+		<meta property="og:site_name" content="NeuroDev AI" />
+
+		<!-- SENIOR SEO: Twitter -->
+		<meta property="twitter:card" content="summary_large_image" />
+		<meta property="twitter:url" content="https://neurodevai.com/magento" />
+		<meta property="twitter:title" content="Magento 2 Engineering | Enterprise E-commerce Optimization Specialist" />
+		<meta property="twitter:description" content="Technical Magento moats for the 1% of commerce stores. Performance, scale, and security." />
+		<meta property="twitter:image" content="https://neurodevai.com/og-magento.jpg" />
+
+		<!-- Structured Data -->
+		<script type="application/ld+json" set:html={JSON.stringify(schemaData)} />
+
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+		<style>
+			@import "tailwindcss";
+			@theme { --color-brand-bg: #020202; --color-brand-blue: #2563eb; }
+			:root { color-scheme: dark; }
+			body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #020202; letter-spacing: -0.01em; }
+			.glass { background: rgba(15, 15, 15, 0.6); backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.05); }
+			.reveal { opacity: 0; transform: translateY(20px); transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
+			.reveal.active { opacity: 1; transform: translateY(0); }
+			h1, h2, h3, .font-black { letter-spacing: -0.04em; text-wrap: balance; }
+		</style>
+	</head>
+	<body class="text-slate-300 selection:bg-blue-600/30 overflow-x-hidden">
+		
+		<!-- Background Orbs -->
+		<div class="fixed inset-0 -z-10 pointer-events-none">
+			<div class="absolute top-[-10%] right-[-10%] w-[40%] h-[40%] bg-blue-900/10 blur-[150px] rounded-full"></div>
+			<div class="absolute bottom-[-10%] left-[-10%] w-[40%] h-[40%] bg-indigo-900/10 blur-[150px] rounded-full"></div>
+		</div>
+
+		<!-- Navigation -->
+		<nav class="fixed top-0 w-full z-50 glass py-6 border-b border-white/5">
+			<div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
+				<a href="/" class="flex items-center gap-2 group cursor-pointer" aria-label="NeuroDev AI Homepage">
+					<div class="w-8 h-8 bg-blue-600 rounded flex items-center justify-center group-hover:rotate-12 transition-transform">
+						<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-white" role="img" aria-label="NeuroDev Logo"><rect x="4" y="4" width="16" height="16" rx="2" ry="2"></rect><rect x="9" y="9" width="6" height="6"></rect><line x1="9" y1="1" x2="9" y2="4"></line><line x1="15" y1="1" x2="15" y2="4"></line></svg>
+					</div>
+					<span class="text-xl font-black text-white tracking-tighter uppercase">Neuro<span class="text-blue-500">Dev</span></span>
+				</a>
+				<div class="hidden md:flex gap-10 items-center">
+					<a href="/#services" class="text-[11px] font-bold uppercase tracking-[0.3em] text-slate-400 hover:text-white transition-colors">Return Home</a>
+					<a href="/#contact" class="px-6 py-2 bg-blue-600 text-white text-[11px] font-bold uppercase tracking-[0.2em] rounded-full hover:bg-blue-700 transition-all">Get Audit</a>
+				</div>
+			</div>
+		</nav>
+
+		<!-- Hero Section -->
+		<header class="pt-48 pb-32 px-6 max-w-7xl mx-auto">
+			<div class="reveal inline-block px-3 py-1 mb-8 text-[10px] font-bold tracking-[0.2em] text-blue-500 uppercase bg-blue-500/10 border border-blue-500/20 rounded-full">
+				Platform Specialty: Adobe Commerce
+			</div>
+			<h1 class="reveal text-5xl md:text-8xl font-black text-white leading-[0.9] mb-12 tracking-tighter">
+				MAGENTO <br/> <span class="text-slate-600 italic">ENGINEERED</span> <br/> FOR REVENUE.
+			</h1>
+			<p class="reveal text-xl md:text-2xl text-slate-400 max-w-2xl leading-relaxed font-medium">
+				Standard agencies build websites. We build <span class="text-white">technical moats</span>. Performance, scalability, and security architecture for the 1% of commerce stores.
+			</p>
+		</header>
+
+		<!-- Capabilities Grid -->
+		<section class="py-32 px-6 bg-white/[0.01] border-y border-white/5">
+			<div class="max-w-7xl mx-auto">
+				<div class="grid md:grid-cols-2 gap-12">
+					{services.map((s) => (
+						<div class="reveal glass p-12 rounded-[2.5rem] hover:border-blue-500/30 transition-all group">
+							<div class="w-12 h-12 bg-blue-600/10 border border-blue-500/20 rounded-xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform">
+								<svg 
+									xmlns="http://www.w3.org/2000/svg" 
+									width="24" 
+									height="24" 
+									viewBox="0 0 24 24" 
+									fill="none" 
+									stroke="#2563eb" 
+									stroke-width="2" 
+									stroke-linecap="round" 
+									stroke-linejoin="round" 
+									role="img" 
+									aria-label={s.ariaLabel}
+								>
+									<path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+								</svg>
+							</div>
+							<h3 class="text-3xl font-bold text-white mb-6 uppercase tracking-tight">{s.title}</h3>
+							<p class="text-slate-400 leading-relaxed text-lg">{s.desc}</p>
+						</div>
+					))}
+				</div>
+			</div>
+		</section>
+
+		<!-- Comparison Section -->
+		<section class="py-32 px-6 max-w-7xl mx-auto">
+			<div class="text-center mb-20">
+				<h2 class="reveal text-4xl md:text-6xl font-black text-white uppercase tracking-tighter mb-4">The Performance <span class="text-blue-500">Gap.</span></h2>
+				<p class="reveal text-slate-500 font-bold uppercase tracking-widest text-[10px]">How we outperform standard implementation</p>
+			</div>
+			
+			<div class="reveal grid md:grid-cols-2 gap-8">
+				<div class="p-10 border border-white/5 bg-white/[0.02] rounded-[2rem]">
+					<h4 class="text-red-500 font-bold uppercase tracking-widest text-[11px] mb-6">Standard Agencies</h4>
+					<ul class="space-y-4 text-slate-500">
+						<li class="flex items-center gap-3">✕ Heavy 3rd party extension reliance</li>
+						<li class="flex items-center gap-3">✕ Slow LCP scores (4s+)</li>
+						<li class="flex items-center gap-3">✕ Bloated JS bundles</li>
+						<li class="flex items-center gap-3">✕ Security vulnerabilities</li>
+					</ul>
+				</div>
+				<div class="p-10 border border-blue-500/20 bg-blue-500/5 rounded-[2rem]">
+					<h4 class="text-blue-500 font-bold uppercase tracking-widest text-[11px] mb-6">NeuroDev Engineering</h4>
+					<ul class="space-y-4 text-slate-200">
+						<li class="flex items-center gap-3"><span class="text-blue-500 font-bold">✓</span> Lean, custom module logic</li>
+						<li class="flex items-center gap-3"><span class="text-blue-500 font-bold">✓</span> Sub-800ms LCP scores</li>
+						<li class="flex items-center gap-3"><span class="text-blue-500 font-bold">✓</span> Tree-shaken codebases</li>
+						<li class="flex items-center gap-3"><span class="text-blue-500 font-bold">✓</span> Hardened security patches</li>
+					</ul>
+				</div>
+			</div>
+		</section>
+
+		<!-- Final CTA -->
+		<section class="py-40 px-6 text-center border-t border-white/5">
+			<div class="max-w-4xl mx-auto">
+				<h2 class="reveal text-6xl md:text-9xl font-black text-white tracking-tighter mb-12 uppercase">Optimize <br/> <span class="text-blue-500">Now.</span></h2>
+				<p class="reveal text-slate-500 text-xl mb-12">Is your Magento store leaking revenue? Let's fix the architecture.</p>
+				<a href="/#contact" class="reveal inline-block px-12 py-6 bg-white text-black font-black uppercase tracking-[0.2em] rounded-full hover:bg-blue-600 hover:text-white transition-all">
+					Request Tech Audit
+				</a>
+			</div>
+		</section>
+
+		<footer class="py-20 border-t border-white/5 text-center text-[10px] text-slate-600 font-bold uppercase tracking-[0.4em]">
+			&copy; 2025 NeuroDev AI • Engineering Growth
+		</footer>
+
+		<script>
+			const observer = new IntersectionObserver((entries) => {
+				entries.forEach(entry => {
+					if (entry.isIntersecting) entry.target.classList.add('active');
+				});
+			}, { threshold: 0.1 });
+			document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+		</script>
+	</body>
+</html>
