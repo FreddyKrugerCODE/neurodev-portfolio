@@ -1,25 +1,568 @@
----
-import Layout from '../layouts/Layout.astro';
----
-<Layout title="Home" description="Expert Magento 2 and AI development agency.">
-    <header class="pt-40 pb-20 px-6 max-w-7xl mx-auto">
-        <h1 class="text-7xl md:text-[9rem] font-black text-white leading-none tracking-tighter mb-12">
-            WE CODE <br/> <span class="text-blue-600">SMART</span> COMMERCE.
-        </h1>
-        <p class="text-xl md:text-2xl max-w-2xl text-slate-400 leading-relaxed mb-10">
-            NeuroDev AI engineers high-performance **Magento 2** stores and integrates **Neural Logic** to automate your revenue growth.
-        </p>
-    </header>
+import React, { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { 
+  Cpu, 
+  ShoppingBag, 
+  Search, 
+  ArrowRight, 
+  Menu, 
+  X, 
+  CheckCircle, 
+  Globe, 
+  Zap,
+  Terminal,
+  Layers,
+  ChevronDown,
+  ExternalLink,
+  BarChart3,
+  Code2
+} from 'lucide-react';
 
-    <section class="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-6 py-20">
-        <a href="/magento" class="md:col-span-2 p-12 bg-slate-900/40 border border-white/10 rounded-[2rem] hover:border-blue-500/50 transition-all group">
-            <h2 class="text-4xl font-bold text-white mb-4">Magento 2 Specialist</h2>
-            <p class="text-slate-400 text-lg mb-6">Enterprise-grade performance and custom module development.</p>
-            <span class="text-blue-500 font-bold group-hover:translate-x-2 inline-block transition">View Architecture &rarr;</span>
-        </a>
-        <div class="p-10 bg-slate-900/40 border border-white/10 rounded-[2rem]">
-            <h3 class="text-2xl font-bold text-white mb-4">SEO Mastery</h3>
-            <p class="text-slate-500">Data-driven ranking strategies designed to dominate technical search landscapes.</p>
+// Animation Variants
+const fadeInUp = {
+  initial: { opacity: 0, y: 30 },
+  whileInView: { opacity: 1, y: 0 },
+  viewport: { once: true },
+  transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] }
+};
+
+const staggerContainer = {
+  initial: {},
+  whileInView: { transition: { staggerChildren: 0.1 } }
+};
+
+const App = () => {
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [activeFaq, setActiveFaq] = useState(null);
+
+  useEffect(() => {
+    const handleScroll = () => setIsScrolled(window.scrollY > 50);
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const faqData = [
+    {
+      q: "How does AI integration work with Magento?",
+      a: "We implement custom middleware that connects your Magento backend to LLMs. This allows for automated product descriptions, intelligent search, and neural customer support agents that understand your specific catalog."
+    },
+    {
+      q: "What is your typical optimization timeline?",
+      a: "A technical audit takes 7 days. Speed and Core Vital optimizations usually see significant results within 2-3 weeks of implementation."
+    },
+    {
+      q: "Do you handle custom Magento module development?",
+      a: "Yes. We specialize in high-complexity modules that standard agencies avoid, specifically focusing on ERP integrations and custom checkout logic."
+    }
+  ];
+
+  return (
+    <div className="min-h-screen bg-[#020202] text-slate-300 font-sans selection:bg-blue-600/30 overflow-x-hidden">
+      {/* --- CINEMATIC BACKGROUND --- */}
+      <div className="fixed inset-0 -z-10">
+        <motion.div 
+          animate={{ 
+            scale: [1, 1.2, 1],
+            opacity: [0.1, 0.2, 0.1] 
+          }}
+          transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
+          className="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] bg-blue-900/30 blur-[150px] rounded-full" 
+        />
+        <div className="absolute bottom-[-10%] right-[-10%] w-[50%] h-[50%] bg-indigo-900/10 blur-[150px] rounded-full" />
+        <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-[0.03] pointer-events-none" />
+      </div>
+
+      {/* --- NAVIGATION --- */}
+      <nav className={`fixed top-0 w-full z-50 transition-all duration-700 border-b ${isScrolled ? 'bg-black/80 backdrop-blur-2xl py-4 border-white/10' : 'bg-transparent py-8 border-transparent'}`}>
+        <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
+          <motion.div 
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            className="flex items-center gap-2 group cursor-pointer"
+          >
+            <div className="w-8 h-8 bg-blue-600 rounded flex items-center justify-center group-hover:rotate-12 transition-transform">
+              <Cpu size={18} className="text-white" />
+            </div>
+            <span className="text-xl font-black text-white tracking-tighter uppercase">
+              Neuro<span className="text-blue-500">Dev</span>
+            </span>
+          </motion.div>
+
+          {/* Desktop Menu */}
+          <div className="hidden md:flex gap-10 items-center">
+            {['Services', 'Methodology', 'Arsenal', 'Results'].map((item, idx) => (
+              <motion.a 
+                key={item} 
+                href={`#${item.toLowerCase()}`} 
+                initial={{ opacity: 0, y: -10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.1 * idx }}
+                className="text-[11px] font-bold uppercase tracking-[0.3em] text-slate-400 hover:text-white transition-colors"
+              >
+                {item}
+              </motion.a>
+            ))}
+            <motion.button 
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="px-6 py-2.5 bg-white text-black text-[11px] font-bold uppercase tracking-[0.2em] rounded-full hover:bg-blue-600 hover:text-white transition-all duration-300 shadow-[0_0_20px_rgba(255,255,255,0.1)]"
+            >
+              Initialize
+            </motion.button>
+          </div>
+
+          {/* Mobile Toggle */}
+          <button className="md:hidden text-white" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
+            {mobileMenuOpen ? <X /> : <Menu />}
+          </button>
         </div>
-    </section>
-</Layout>
+      </nav>
+
+      {/* --- HERO SECTION --- */}
+      <header className="relative pt-44 pb-20 px-6 max-w-7xl mx-auto min-h-[90vh] flex flex-col justify-center">
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="inline-flex items-center gap-2 px-3 py-1 mb-8 text-[10px] font-bold tracking-[0.2em] text-blue-500 uppercase bg-blue-500/10 border border-blue-500/20 rounded-full"
+        >
+          <span className="relative flex h-2 w-2">
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
+            <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
+          </span>
+          Neural Ops: 2025 Edition
+        </motion.div>
+        
+        <motion.h1 
+          initial={{ opacity: 0, filter: 'blur(20px)', y: 40 }}
+          animate={{ opacity: 1, filter: 'blur(0px)', y: 0 }}
+          transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
+          className="text-[clamp(3.5rem,11vw,12rem)] font-black text-white leading-[0.85] tracking-tighter mb-16"
+        >
+          ENGINEERING <br /> 
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-indigo-400 to-slate-600">
+            INTELLIGENT
+          </span> <br /> 
+          COMMERCE.
+        </motion.h1>
+
+        <div className="grid md:grid-cols-2 gap-12 items-end">
+          <motion.p 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.5, duration: 1 }}
+            className="text-xl md:text-2xl text-slate-400 leading-relaxed font-light max-w-xl"
+          >
+            NeuroDev AI architecturally optimizes **Magento 2** ecosystems and integrates custom **Neural Networks** to automate high-velocity digital growth.
+          </motion.p>
+          <motion.div 
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ delay: 0.7 }}
+            className="flex gap-4"
+          >
+            <button className="px-10 py-5 bg-blue-600 text-white font-bold rounded-2xl hover:bg-blue-500 transition-all flex items-center gap-3 group shadow-lg shadow-blue-900/20">
+              Start Project <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
+            </button>
+            <button className="px-10 py-5 bg-white/5 border border-white/10 text-white font-bold rounded-2xl hover:bg-white/10 transition-all">
+              Our Stack
+            </button>
+          </motion.div>
+        </div>
+      </header>
+
+      {/* --- BENTO GRID SERVICES --- */}
+      <section id="services" className="max-w-7xl mx-auto px-6 py-32">
+        <motion.div 
+          variants={staggerContainer}
+          initial="initial"
+          whileInView="whileInView"
+          viewport={{ once: true }}
+          className="grid grid-cols-1 md:grid-cols-12 gap-6"
+        >
+          {/* Main Card: Magento */}
+          <motion.div 
+            variants={fadeInUp}
+            whileHover={{ y: -5 }}
+            className="md:col-span-8 group relative overflow-hidden bg-white/[0.03] border border-white/10 rounded-[2.5rem] p-12 transition-all duration-500 hover:border-blue-500/40"
+          >
+            <div className="flex justify-between items-start mb-20">
+              <div className="p-4 bg-blue-600/10 rounded-2xl border border-blue-600/20">
+                <ShoppingBag size={32} className="text-blue-500" />
+              </div>
+              <span className="text-[10px] font-mono text-slate-600 tracking-widest">01 / E-COMMERCE</span>
+            </div>
+            <h3 className="text-5xl font-bold text-white mb-6 tracking-tight">Magento 2 Engineering</h3>
+            <p className="text-lg text-slate-400 max-w-md leading-relaxed mb-8">
+              We solve the complex 1% of Magento problems. From enterprise migrations to sub-second checkout optimizations.
+            </p>
+            <div className="flex flex-wrap gap-2 mt-auto">
+              {['PWA Studio', 'Performance Architecture', 'Headless'].map(tag => (
+                <span key={tag} className="px-3 py-1 bg-white/5 border border-white/5 rounded-full text-[9px] font-bold uppercase tracking-widest text-slate-500">
+                  {tag}
+                </span>
+              ))}
+            </div>
+          </motion.div>
+
+          {/* Side Card: AI */}
+          <motion.div 
+            variants={fadeInUp}
+            whileHover={{ y: -5 }}
+            className="md:col-span-4 bg-gradient-to-br from-blue-600 to-indigo-700 rounded-[2.5rem] p-12 flex flex-col text-white shadow-2xl shadow-blue-900/30"
+          >
+            <div className="mb-12">
+              <Zap size={32} />
+            </div>
+            <h3 className="text-3xl font-bold mb-4">Neural Logic Integration</h3>
+            <p className="text-blue-100/80 leading-relaxed mb-8">
+              Custom AI agents that automate customer flows and business logic.
+            </p>
+            <div className="mt-auto pt-8 border-t border-white/20">
+              <div className="flex -space-x-2">
+                {[1,2,3].map(i => (
+                  <div key={i} className="w-8 h-8 rounded-full bg-white/20 border border-white/30 flex items-center justify-center">
+                    <CheckCircle size={14} />
+                  </div>
+                ))}
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Bottom Card: SEO */}
+          <motion.div 
+            variants={fadeInUp}
+            whileHover={{ y: -5 }}
+            className="md:col-span-4 bg-white/[0.03] border border-white/10 rounded-[2.5rem] p-12 hover:border-white/20 transition-all group"
+          >
+            <Search size={28} className="text-slate-500 mb-6 group-hover:text-blue-500 transition-colors" />
+            <h3 className="text-2xl font-bold text-white mb-4">Technical SEO</h3>
+            <p className="text-slate-500 text-sm leading-relaxed">
+              Data-led ranking dominance. We optimize the site architecture, not just the keywords.
+            </p>
+          </motion.div>
+
+          {/* Bottom Card: Terminal Visualization */}
+          <motion.div 
+            variants={fadeInUp}
+            className="md:col-span-8 bg-[#0a0a0a] border border-white/10 rounded-[2.5rem] p-8 font-mono text-sm overflow-hidden relative"
+          >
+            <div className="flex gap-2 mb-6">
+              <div className="w-3 h-3 rounded-full bg-red-500/50" />
+              <div className="w-3 h-3 rounded-full bg-yellow-500/50" />
+              <div className="w-3 h-3 rounded-full bg-green-500/50" />
+            </div>
+            <div className="space-y-2 text-blue-400">
+              <p className="flex gap-2"><span className="text-slate-600">neurodev:</span> <span className="text-white">~ $</span> git init</p>
+              <p className="flex gap-2"><span className="text-slate-600">neurodev:</span> <span className="text-white">~ $</span> analyze --target magento-store</p>
+              <p className="text-slate-500 leading-none">Scanning Core Vitals...</p>
+              <motion.p 
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                transition={{ delay: 0.5 }}
+                className="text-green-500 leading-none"
+              >[OK] LCP: 0.8s</motion.p>
+              <motion.p 
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                transition={{ delay: 0.7 }}
+                className="text-green-500 leading-none"
+              >[OK] FID: 12ms</motion.p>
+              <p className="flex gap-2"><span className="text-slate-600">neurodev:</span> <span className="text-white">~ $</span> deploy --to neural-network</p>
+              <p className="text-blue-200 animate-pulse underline decoration-blue-500 underline-offset-4 font-bold">OPTIMIZATION COMPLETE</p>
+            </div>
+            <div className="absolute inset-0 opacity-10 pointer-events-none bg-[radial-gradient(#2563eb_1px,transparent_1px)] [background-size:20px_20px]" />
+          </motion.div>
+        </motion.div>
+      </section>
+
+      {/* --- METHODOLOGY --- */}
+      <section id="methodology" className="py-32 px-6 bg-white/[0.01] border-y border-white/5 relative overflow-hidden">
+        <div className="max-w-7xl mx-auto">
+          <div className="flex flex-col md:flex-row gap-20 items-center">
+            <motion.div 
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="flex-1"
+            >
+              <h2 className="text-6xl font-black text-white tracking-tighter mb-12 uppercase leading-none">
+                THE LOGIC <br /> <span className="text-slate-600 italic font-light">PROCESS.</span>
+              </h2>
+              <div className="space-y-12">
+                {[
+                  { title: "Archetype Analysis", desc: "We deconstruct your current tech debt and business constraints." },
+                  { title: "Neural Layering", desc: "Injecting automated logic triggers across your sales funnel." },
+                  { title: "Production Scaling", desc: "Hardening the architecture for multi-million dollar throughput." }
+                ].map((step, idx) => (
+                  <motion.div 
+                    key={idx} 
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ delay: idx * 0.2 }}
+                    viewport={{ once: true }}
+                    className="flex gap-6 items-start"
+                  >
+                    <span className="text-blue-500 font-black text-xl">0{idx + 1}</span>
+                    <div>
+                      <h4 className="text-white font-bold text-lg mb-2">{step.title}</h4>
+                      <p className="text-slate-500 text-sm leading-relaxed">{step.desc}</p>
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+            </motion.div>
+            <motion.div 
+              initial={{ opacity: 0, scale: 0.8, rotate: -10 }}
+              whileInView={{ opacity: 1, scale: 1, rotate: 0 }}
+              viewport={{ once: true }}
+              className="flex-1 relative"
+            >
+              <div className="aspect-square bg-blue-600/10 rounded-full flex items-center justify-center p-12 border border-blue-500/20">
+                <motion.div 
+                  animate={{ rotate: 360 }}
+                  transition={{ duration: 60, repeat: Infinity, ease: "linear" }}
+                  className="w-full h-full border border-white/10 rounded-full p-12 relative"
+                >
+                  <div className="w-4 h-4 bg-blue-500 rounded-full absolute -top-2 left-1/2 shadow-[0_0_20px_#3b82f6]" />
+                </motion.div>
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <Terminal size={120} className="text-white opacity-20" />
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* --- TECHNICAL ARSENAL --- */}
+      <section id="arsenal" className="py-32 px-6">
+        <div className="max-w-7xl mx-auto">
+          <motion.div 
+            variants={fadeInUp}
+            initial="initial"
+            whileInView="whileInView"
+            viewport={{ once: true }}
+            className="text-center mb-20"
+          >
+            <h2 className="text-5xl font-black text-white tracking-tighter mb-4 uppercase">Technical Arsenal</h2>
+            <p className="text-slate-500 uppercase tracking-widest text-[10px] font-bold">Hardware & Software Integration</p>
+          </motion.div>
+          <motion.div 
+            variants={staggerContainer}
+            initial="initial"
+            whileInView="whileInView"
+            viewport={{ once: true }}
+            className="grid grid-cols-2 md:grid-cols-4 gap-4"
+          >
+            {[
+              { label: "Adobe Commerce", icon: <ShoppingBag size={20}/>, category: "Platform" },
+              { label: "React / Next.js", icon: <Layers size={20}/>, category: "Frontend" },
+              { label: "Python / PyTorch", icon: <Cpu size={20}/>, category: "AI Ops" },
+              { label: "Elasticsearch", icon: <Search size={20}/>, category: "Infrastructure" },
+              { label: "PostgreSQL", icon: <Terminal size={20}/>, category: "Database" },
+              { label: "Docker / K8s", icon: <Zap size={20}/>, category: "Deployment" },
+              { label: "Google Search Console", icon: <Globe size={20}/>, category: "SEO" },
+              { label: "Tailwind CSS", icon: <Code2 size={20}/>, category: "Styling" }
+            ].map((tech, idx) => (
+              <motion.div 
+                key={idx} 
+                variants={fadeInUp}
+                whileHover={{ scale: 1.05, backgroundColor: 'rgba(37, 99, 235, 0.1)' }}
+                className="p-8 border border-white/5 bg-white/[0.02] rounded-3xl transition-all group cursor-default"
+              >
+                <div className="text-blue-500 mb-4 group-hover:scale-110 transition-transform">{tech.icon}</div>
+                <p className="text-white font-bold text-sm mb-1">{tech.label}</p>
+                <p className="text-slate-600 text-[9px] uppercase tracking-widest font-bold">{tech.category}</p>
+              </motion.div>
+            ))}
+          </motion.div>
+        </div>
+      </section>
+
+      {/* --- SUCCESS METRICS --- */}
+      <section id="results" className="py-32 px-6 bg-blue-600/5 relative overflow-hidden">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-20 items-end mb-20">
+            <motion.div 
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+            >
+              <h2 className="text-6xl font-black text-white tracking-tighter uppercase leading-none mb-6">Success <br/> Metrics.</h2>
+              <p className="text-slate-400 text-lg">Measurable intelligence delivered across the e-commerce spectrum.</p>
+            </motion.div>
+            <div className="flex gap-12">
+              {[
+                { val: "99.8", unit: "%", label: "Lighthouse Score" },
+                { val: "45", unit: "%", label: "AOV Increase" },
+                { val: "24/7", unit: "", label: "AI Support" }
+              ].map((m, i) => (
+                <motion.div 
+                  key={i}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ delay: i * 0.1 }}
+                  viewport={{ once: true }}
+                  className="text-center"
+                >
+                  <p className="text-4xl font-black text-blue-500">{m.val}<span className="text-sm">{m.unit}</span></p>
+                  <p className="text-[10px] font-bold uppercase tracking-widest text-slate-500">{m.label}</p>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-6">
+            {[
+              { id: "01", title: "The Global Luxe Replatform", desc: "Transitioning a $20M AOV brand from Legacy M1 to a Headless Neural-Search architecture.", color: "blue" },
+              { id: "02", title: "AI Concierge Integration", desc: "Custom LLM deployment resulting in 30% reduction in support overhead and 12% sales lift.", color: "indigo" }
+            ].map((caseStudy, i) => (
+              <motion.div 
+                key={i}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                whileHover={{ y: -10 }}
+                className="group relative h-[450px] rounded-[3rem] overflow-hidden border border-white/10"
+              >
+                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent z-10" />
+                <div className={`absolute inset-0 bg-${caseStudy.color}-900/20 group-hover:scale-110 transition-transform duration-1000`} />
+                <div className="absolute bottom-0 p-12 z-20">
+                  <p className={`text-${caseStudy.color}-500 font-mono text-[10px] mb-2 uppercase tracking-[0.3em]`}>Case Study {caseStudy.id}</p>
+                  <h4 className="text-3xl font-bold text-white mb-4">{caseStudy.title}</h4>
+                  <p className="text-slate-400 text-sm mb-6 max-w-sm">{caseStudy.desc}</p>
+                  <button className="flex items-center gap-2 text-white font-bold text-xs uppercase tracking-widest group/btn">
+                    View Logic <ExternalLink size={14} className="group-hover/btn:translate-x-1 transition-transform" />
+                  </button>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* --- NEURAL DEBUGGING / FAQ --- */}
+      <section className="py-32 px-6">
+        <div className="max-w-3xl mx-auto">
+          <motion.div 
+            variants={fadeInUp}
+            initial="initial"
+            whileInView="whileInView"
+            viewport={{ once: true }}
+            className="text-center mb-20"
+          >
+            <h2 className="text-5xl font-black text-white tracking-tighter mb-4 uppercase">Neural Debugging</h2>
+            <p className="text-slate-500 uppercase tracking-widest text-[10px] font-bold">Frequently Queried Parameters</p>
+          </motion.div>
+          <div className="space-y-4">
+            {faqData.map((faq, idx) => (
+              <motion.div 
+                key={idx}
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: idx * 0.1 }}
+                viewport={{ once: true }}
+                className="border border-white/5 bg-white/[0.01] rounded-3xl overflow-hidden transition-all"
+              >
+                <button 
+                  onClick={() => setActiveFaq(activeFaq === idx ? null : idx)}
+                  className="w-full p-8 flex justify-between items-center text-left hover:bg-white/[0.02] transition-colors"
+                >
+                  <span className="text-white font-bold">{faq.q}</span>
+                  <motion.div
+                    animate={{ rotate: activeFaq === idx ? 180 : 0 }}
+                    transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                  >
+                    <ChevronDown className="text-blue-500" />
+                  </motion.div>
+                </button>
+                <AnimatePresence>
+                  {activeFaq === idx && (
+                    <motion.div 
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: "auto", opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
+                      className="overflow-hidden"
+                    >
+                      <div className="p-8 pt-0 text-slate-500 text-sm leading-relaxed border-t border-white/5">
+                        {faq.a}
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* --- CONTACT / CTA --- */}
+      <section id="contact" className="py-40 px-6 border-t border-white/5 relative overflow-hidden">
+        <motion.div 
+          animate={{ scale: [1, 1.1, 1] }}
+          transition={{ duration: 5, repeat: Infinity }}
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-blue-600/5 blur-[120px] -z-10" 
+        />
+        <div className="max-w-7xl mx-auto text-center">
+          <motion.h2 
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            className="text-7xl md:text-9xl font-black text-white tracking-tighter mb-12"
+          >
+            START THE <br /> <span className="text-transparent bg-clip-text bg-gradient-to-b from-white to-slate-700">CONVERSATION</span>
+          </motion.h2>
+          <motion.p 
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ delay: 0.3 }}
+            viewport={{ once: true }}
+            className="text-slate-500 mb-12 max-w-xl mx-auto text-lg"
+          >
+            Available for technical audits, custom Magento engineering, and AI-led digital partnerships.
+          </motion.p>
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.5 }}
+            viewport={{ once: true }}
+            className="flex justify-center gap-6"
+          >
+            <motion.a 
+              href="mailto:contact@neurodevai.com" 
+              whileHover={{ scale: 1.05, boxShadow: "0 0 30px rgba(59, 130, 246, 0.4)" }}
+              whileTap={{ scale: 0.95 }}
+              className="px-12 py-6 bg-white text-black font-black uppercase tracking-[0.2em] rounded-full hover:bg-blue-600 hover:text-white transition-all shadow-xl"
+            >
+              Contact Neural Ops
+            </motion.a>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* --- FOOTER --- */}
+      <footer className="py-20 border-t border-white/5 px-6">
+        <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+          <motion.div 
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            className="text-sm text-slate-600 font-bold uppercase tracking-widest"
+          >
+            &copy; 2025 NeuroDev AI • Engineered in Long Beach
+          </motion.div>
+          <div className="flex gap-12 text-[10px] font-bold uppercase tracking-[0.4em] text-slate-500">
+            {['Privacy', 'Terms', 'Github'].map(item => (
+              <a key={item} href="#" className="hover:text-blue-500 transition-colors">{item}</a>
+            ))}
+          </div>
+        </div>
+      </footer>
+    </div>
+  );
+};
+
+export default App;
