@@ -238,6 +238,7 @@ const schemaData = {
 					</span>
 				</a>
 				<div class="hidden md:flex gap-10 items-center">
+          <a href="/magento" class="text-[11px] font-bold uppercase tracking-[0.3em] text-slate-400 hover:text-white transition-colors border-r border-white/10 pr-10">Magento 2</a>
 					<a href="#services" class="text-[11px] font-bold uppercase tracking-[0.3em] text-slate-400 hover:text-white transition-colors">Services</a>
 					<a href="#methodology" class="text-[11px] font-bold uppercase tracking-[0.3em] text-slate-400 hover:text-white transition-colors">Methodology</a>
 					<a href="#results" class="text-[11px] font-bold uppercase tracking-[0.3em] text-slate-400 hover:text-white transition-colors">Results</a>
@@ -296,7 +297,7 @@ const schemaData = {
 			<div class="grid grid-cols-1 md:grid-cols-12 gap-6">
 				
 				<!-- Magento Specialist -->
-				<div class="reveal md:col-span-8 group relative overflow-hidden bg-white/[0.03] border border-white/10 rounded-[2.5rem] p-12 hover:border-blue-500/40 transition-all duration-500">
+				<a href="/magento" class="reveal md:col-span-8 group relative overflow-hidden bg-white/[0.03] border border-white/10 rounded-[2.5rem] p-12 hover:border-blue-500/40 transition-all duration-500 block">
 					<div class="flex justify-between items-start mb-20">
 						<div class="p-4 bg-blue-600/10 rounded-2xl border border-blue-600/20">
 							<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Magento 2 Engineering Visual"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
@@ -307,12 +308,17 @@ const schemaData = {
 					<p class="text-lg text-slate-400 max-w-md leading-relaxed mb-8">
 						We solve the complex 1% of Magento problems. From enterprise migrations to sub-second checkout optimizations.
 					</p>
-					<div class="flex flex-wrap gap-2 mt-auto">
-						{['PWA Studio', 'Performance Architecture', 'Headless'].map(tag => (
-							<span class="px-3 py-1 bg-white/5 border border-white/5 rounded-full text-[9px] font-bold uppercase tracking-widest text-slate-500">{tag}</span>
-						))}
-					</div>
-				</div>
+					<div class="flex justify-between items-end mt-auto">
+            <div class="flex flex-wrap gap-2">
+              {['PWA Studio', 'Performance Architecture', 'Headless'].map(tag => (
+                <span class="px-3 py-1 bg-white/5 border border-white/5 rounded-full text-[9px] font-bold uppercase tracking-widest text-slate-500">{tag}</span>
+              ))}
+            </div>
+            <span class="hidden sm:flex items-center gap-2 text-blue-500 font-bold text-[10px] uppercase tracking-widest group-hover:gap-4 transition-all">
+              View Technical Deep-Dive <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </span>
+          </div>
+				</a>
 
 				<!-- AI Integration -->
 				<div class="reveal md:col-span-4 bg-gradient-to-br from-blue-600 to-indigo-700 rounded-[2.5rem] p-12 flex flex-col text-white shadow-2xl shadow-blue-900/30">
@@ -552,7 +558,7 @@ const schemaData = {
 				<div class="flex gap-12 text-[10px] font-bold uppercase tracking-[0.4em] text-slate-500">
 					<a href="#" class="hover:text-blue-500 transition-colors">Privacy</a>
 					<a href="#" class="hover:text-blue-500 transition-colors">Terms</a>
-					<a href="https://github.com/FreddyKrugerCODE" class="hover:text-blue-500 transition-colors">Github</a>
+					<a href="https://github.com/FreddyKrugerCODE" aria-label="Visit our GitHub repository"> <i class="icon-github"></i></a>
 				</div>
 			</div>
 		</footer>
