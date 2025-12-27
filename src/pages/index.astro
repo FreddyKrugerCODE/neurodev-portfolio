@@ -40,7 +40,7 @@ const arsenal = [
 		
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,800&display=swap" rel="stylesheet">
 
 		<style>
 			@import "tailwindcss";
@@ -55,8 +55,9 @@ const arsenal = [
 			}
 
 			body {
-				font-family: 'Inter', sans-serif;
+				font-family: 'Plus Jakarta Sans', sans-serif;
 				background-color: var(--color-brand-bg);
+				letter-spacing: -0.02em;
 			}
 
 			.glass {
@@ -87,6 +88,10 @@ const arsenal = [
 
 			.code-scroller {
 				mask-image: linear-gradient(to bottom, transparent, black 20%, black 80%, transparent);
+			}
+
+			h1, h2, h3, .font-black {
+				letter-spacing: -0.05em;
 			}
 		</style>
 	</head>
@@ -309,7 +314,7 @@ const arsenal = [
 					].map(caseStudy => (
 						<div class="reveal group relative h-[450px] rounded-[3rem] overflow-hidden border border-white/10">
 							<div class="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent z-10"></div>
-							<div class={`absolute inset-0 bg-${caseStudy.color} group-hover:scale-110 transition-transform duration-1000`}></div>
+							<div class={`absolute inset-0 bg-${caseStudy.color} group-hover:scale-110 transition-transform duration-1000`} />
 							<div class="absolute bottom-0 p-12 z-20">
 								<p class="text-blue-500 font-mono text-[10px] mb-2 uppercase tracking-[0.3em]">Case Study {caseStudy.id}</p>
 								<h4 class="text-3xl font-bold text-white mb-4">{caseStudy.title}</h4>
