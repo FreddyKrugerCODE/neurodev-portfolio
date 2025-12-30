@@ -94,7 +94,7 @@ const schemaData = {
 		<!-- Background Orbs -->
 		<div class="fixed inset-0 -z-10 pointer-events-none">
 			<div class="absolute top-[-10%] right-[-10%] w-[40%] h-[40%] bg-blue-900/10 blur-[150px] rounded-full"></div>
-			<div class="absolute bottom-[-10%] left-[-10%] w-[40%] h-[40%] bg-indigo-900/10 blur-[150px] rounded-full"></div>
+			<div class="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-indigo-900/10 blur-[150px] rounded-full"></div>
 		</div>
 
 		<!-- Navigation -->
@@ -108,7 +108,10 @@ const schemaData = {
 				</a>
 				<div class="hidden md:flex gap-10 items-center">
 					<a href="/#services" class="text-[11px] font-bold uppercase tracking-[0.3em] text-slate-400 hover:text-white transition-colors">Return Home</a>
-					<a href="/#contact" class="px-6 py-2 bg-blue-600 text-white text-[11px] font-bold uppercase tracking-[0.2em] rounded-full hover:bg-blue-700 transition-all">Get Audit</a>
+					<a href="/#contact" class="px-8 py-3 bg-blue-600 text-white font-bold rounded-2xl hover:bg-blue-500 transition-all flex items-center gap-2 group shadow-lg shadow-blue-900/20 text-[11px] uppercase tracking-widest">
+            Get Audit
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="group-hover:translate-x-1 transition-transform"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+          </a>
 				</div>
 			</div>
 		</nav>
@@ -188,11 +191,13 @@ const schemaData = {
 
 		<!-- Final CTA -->
 		<section class="py-40 px-6 text-center border-t border-white/5">
-			<div class="max-w-4xl mx-auto">
-				<h2 class="reveal text-6xl md:text-9xl font-black text-white tracking-tighter mb-12 uppercase">Optimize <br/> <span class="text-blue-500">Now.</span></h2>
+			<div class="max-w-4xl mx-auto flex flex-col items-center">
+				<h2 class="reveal text-6xl md:text-9xl font-black text-white tracking-tighter mb-12 uppercase leading-none">Optimize <br/> <span class="text-blue-500">Now.</span></h2>
 				<p class="reveal text-slate-500 text-xl mb-12">Is your Magento store leaking revenue? Let's fix the architecture.</p>
-				<a href="/#contact" class="reveal inline-block px-12 py-6 bg-white text-black font-black uppercase tracking-[0.2em] rounded-full hover:bg-blue-600 hover:text-white transition-all">
+        
+				<a href="/#contact" class="reveal px-10 py-5 bg-blue-600 text-white font-bold rounded-2xl hover:bg-blue-500 transition-all flex items-center gap-3 group shadow-lg shadow-blue-900/20 uppercase tracking-widest text-sm">
 					Request Tech Audit
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="group-hover:translate-x-1 transition-transform"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
 				</a>
 			</div>
 		</section>
