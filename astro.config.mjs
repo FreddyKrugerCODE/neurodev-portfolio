@@ -17,6 +17,8 @@ export default defineConfig({
       config: {
         forward: ["dataLayer.push"], // Required for GA4
       },
+      // FIX: Copy Partytown library files to avoid "NoParty" error
+      copyLibFiles: true,
     }),
     sitemap({
       // Filter out pages you don't want indexed
