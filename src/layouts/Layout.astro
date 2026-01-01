@@ -24,6 +24,15 @@ const { title, description } = Astro.props;
         .reveal.active { opacity: 1; transform: translateY(0); }
     </style>
 </head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TH54RDVRVK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-TH54RDVRVK');
+</script>
 <body class="bg-[#020202] text-slate-300 selection:bg-blue-600/30 overflow-x-hidden">
 		<!-- Navigation -->
 		<nav id="navbar" class="fixed top-0 w-full z-50 transition-all duration-700 border-b border-transparent py-8">
