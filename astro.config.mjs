@@ -1,21 +1,25 @@
 import { defineConfig } from 'astro/config';
-import sitemap from '@astrojs/sitemap';
-import tailwind from '@astrojs/tailwind'; // Make sure this import is here
+import tailwindcss from '@tailwindcss/vite'; // Your original Tailwind
+import sitemap from '@astrojs/sitemap';      // The new Sitemap
 
+// https://astro.build/config
 export default defineConfig({
-  site: 'https://www.neurodevai.com', // Crucial: Must match your domain exactly
+  site: 'https://www.neurodevai.com', // <--- IMPORTANT: Required for Sitemap
+
+  vite: {
+    plugins: [tailwindcss()] // Keeps your styles working
+  },
+
   integrations: [
-    tailwind(), // <--- Ensure this is here!
     sitemap({
-      // Filter out pages you don't want indexed (like a 404 page)
+      // Filter out pages you don't want indexed
       filter: (page) => page !== 'https://www.neurodevai.com/404',
       
       // Custom logic to make the sitemap "strong"
       changefreq: 'weekly',
-      priority: 0.7, // Default priority for all pages
+      priority: 0.7, 
       lastmod: new Date(),
       
-      // function to assign specific priorities based on the URL
       serialize(item) {
         // High Priority: Homepage
         if (item.url === 'https://www.neurodevai.com/') {
@@ -32,9 +36,8 @@ export default defineConfig({
           item.priority = 0.3;
           item.changefreq = 'yearly';
         }
-        
         return item;
       },
-    }),
-  ],
+    })
+  ]
 });
