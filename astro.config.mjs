@@ -1,9 +1,11 @@
 import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
+import tailwind from '@astrojs/tailwind'; // Make sure this import is here
 
 export default defineConfig({
   site: 'https://www.neurodevai.com', // Crucial: Must match your domain exactly
   integrations: [
+    tailwind(), // <--- Ensure this is here!
     sitemap({
       // Filter out pages you don't want indexed (like a 404 page)
       filter: (page) => page !== 'https://www.neurodevai.com/404',
