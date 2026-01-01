@@ -1,6 +1,7 @@
 ---
 // NeuroDev AI - Flagship Page (Astro Edition)
 // High-performance, SEO-optimized, and built for 2025 growth.
+import Layout from '../layouts/Layout.astro';
 
 const faqData = [
   {
@@ -28,226 +29,21 @@ const arsenal = [
   { label: "Tailwind CSS", category: "Styling", aria: "Modern Styling Engine" }
 ];
 
-// PRO SEO: JSON-LD Structured Data Entity Optimization
-const schemaData = {
-  "@context": "https://schema.org",
-  "@type": "ProfessionalService",
-  "name": "NeuroDev AI",
-  "alternateName": "NeuroDev",
-  "description": "Enterprise Magento 2 engineering, custom AI agent integration, and technical SEO dominance agency based in Long Beach, California.",
-  "url": "https://neurodevai.com",
-  "logo": "https://neurodevai.com/logo.png",
-  "image": "https://neurodevai.com/og-image.jpg",
-  "priceRange": "$$$",
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "Long Beach",
-    "addressRegion": "CA",
-    "postalCode": "90802",
-    "addressCountry": "US"
-  },
-  "geo": {
-    "@type": "GeoCoordinates",
-    "latitude": 33.7701,
-    "longitude": -118.1937
-  },
-  "founder": {
-    "@type": "Person",
-    "name": "Freddy",
-    "sameAs": ["https://github.com/FreddyKrugerCODE"]
-  },
-  "knowsAbout": [
-    "Magento 2 Development",
-    "AI Integration",
-    "Technical SEO",
-    "Adobe Commerce Cloud",
-    "Neural Networks"
-  ],
-  "hasOfferCatalog": {
-    "@type": "OfferCatalog",
-    "name": "NeuroDev Core Services",
-    "itemListElement": [
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Magento 2 Performance Engineering"
-        }
-      },
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Custom AI Logic & Agent Integration"
-        }
-      },
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Technical SEO & Search Dominance Audits"
-        }
-      }
-    ]
-  },
-  "openingHoursSpecification": [
-    {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-      "opens": "09:00",
-      "closes": "18:00"
-    }
-  ],
-  "sameAs": [
-    "https://github.com/FreddyKrugerCODE"
-  ]
-};
+// SEO NOTE: JSON-LD schema removed from this page as it's handled globally in Layout.astro
+// This prevents duplicate structured data which can confuse search engines
 ---
 
-<html lang="en" class="scroll-smooth">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		
-		<!-- SENIOR SEO: Primary Meta Tags -->
-		<title>NeuroDev AI | Strategic Magento 2 & Neural AI Engineering</title>
-		<meta name="title" content="NeuroDev AI | Strategic Magento 2 & Neural AI Engineering" />
-		<meta name="description" content="Dominate technical search and automate e-commerce revenue. We architect high-performance Magento stores and custom AI agents for the enterprise market." />
-		<link rel="canonical" href="https://neurodevai.com/" />
-		<meta name="robots" content="index, follow" />
+<Layout 
+  title="NeuroDev AI | Strategic Magento 2 & Neural AI Engineering" 
+  description="Dominate technical search and automate e-commerce revenue. We architect high-performance Magento stores and custom AI agents for the enterprise market.">
 
-		<!-- SENIOR SEO: Open Graph / Facebook -->
-		<meta property="og:type" content="website" />
-		<meta property="og:url" content="https://neurodevai.com/" />
-		<meta property="og:title" content="NeuroDev AI | Strategic Magento 2 & Neural AI Engineering" />
-		<meta property="og:description" content="Architecting conversion-centric digital commerce experiences with sub-second load times and neural-led automation." />
-		<meta property="og:image" content="https://www.neurodevai.com/social-preview.jpg" />
-		<meta property="og:site_name" content="NeuroDev AI" />
+	<!-- Background Orbs -->
+	<div class="fixed inset-0 -z-10 pointer-events-none">
+		<div class="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] bg-blue-900/20 blur-[150px] rounded-full animate-pulse"></div>
+		<div class="absolute bottom-[-10%] right-[-10%] w-[50%] h-[50%] bg-indigo-900/10 blur-[150px] rounded-full"></div>
+	</div>
 
-		<!-- SENIOR SEO: Twitter -->
-		<meta property="twitter:card" content="summary_large_image" />
-		<meta property="twitter:url" content="https://neurodevai.com/" />
-		<meta property="twitter:title" content="NeuroDev AI | Strategic Magento 2 & Neural AI Engineering" />
-		<meta property="twitter:description" content="Technical Magento moats and AI logic for the 1% of commerce stores." />
-		<meta property="twitter:image" content="https://neurodevai.com/og-home.jpg" />
-
-		<!-- Structured Data -->
-		<script type="application/ld+json" set:html={JSON.stringify(schemaData)} />
-
-		<link rel="preconnect" href="https://fonts.googleapis.com">
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-
-		<style>
-			@import "tailwindcss";
-
-			@theme {
-				--color-brand-bg: #020202;
-				--color-brand-blue: #2563eb;
-			}
-
-			:root {
-				color-scheme: dark;
-			}
-
-			body {
-				font-family: 'Plus Jakarta Sans', sans-serif;
-				background-color: var(--color-brand-bg);
-				letter-spacing: -0.01em;
-			}
-
-			.glass {
-				background: rgba(15, 15, 15, 0.6);
-				backdrop-filter: blur(20px);
-				border: 1px solid rgba(255, 255, 255, 0.05);
-			}
-
-			.text-glow {
-				text-shadow: 0 0 30px rgba(37, 99, 235, 0.3);
-			}
-
-			.neural-grid {
-				background-image: radial-gradient(rgba(37, 99, 235, 0.1) 1px, transparent 1px);
-				background-size: 30px 30px;
-			}
-
-			.reveal {
-				opacity: 0;
-				transform: translateY(30px);
-				transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-			}
-
-			.reveal.active {
-				opacity: 1;
-				transform: translateY(0);
-			}
-
-			.code-scroller {
-				mask-image: linear-gradient(to bottom, transparent, black 20%, black 80%, transparent);
-			}
-
-			h1, h2, h3, .font-black {
-				letter-spacing: -0.04em;
-				text-wrap: balance;
-			}
-
-			/* Tasty Paragraph Styling */
-			.hero-paragraph {
-				line-height: 1.6;
-				letter-spacing: -0.02em;
-				text-wrap: balance;
-			}
-
-			input, textarea, select {
-				background: rgba(255, 255, 255, 0.03) !important;
-				border: 1px solid rgba(255, 255, 255, 0.1) !important;
-				transition: all 0.3s ease;
-			}
-
-			input:focus, textarea:focus, select:focus {
-				border-color: #2563eb !important;
-				background: rgba(37, 99, 235, 0.05) !important;
-				outline: none;
-			}
-
-      /* Bot trap */
-      .hidden-trap {
-        display: none;
-      }
-		</style>
-	</head>
-	<body class="text-slate-300 selection:bg-blue-600/30 overflow-x-hidden">
-		
-		<!-- Background Orbs -->
-		<div class="fixed inset-0 -z-10 pointer-events-none">
-			<div class="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] bg-blue-900/20 blur-[150px] rounded-full animate-pulse"></div>
-			<div class="absolute bottom-[-10%] right-[-10%] w-[50%] h-[50%] bg-indigo-900/10 blur-[150px] rounded-full"></div>
-		</div>
-
-		<!-- Navigation -->
-		<nav id="navbar" class="fixed top-0 w-full z-50 transition-all duration-700 border-b border-transparent py-8">
-			<div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
-				<a href="/" class="flex items-center gap-2 group cursor-pointer" aria-label="NeuroDev AI Homepage">
-					<div class="w-8 h-8 bg-blue-600 rounded flex items-center justify-center group-hover:rotate-12 transition-transform">
-						<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-white" role="img" aria-label="NeuroDev AI Neural Logo"><rect x="4" y="4" width="16" height="16" rx="2" ry="2"></rect><rect x="9" y="9" width="6" height="6"></rect><line x1="9" y1="1" x2="9" y2="4"></line><line x1="15" y1="1" x2="15" y2="4"></line><line x1="9" y1="20" x2="9" y2="23"></line><line x1="15" y1="20" x2="15" y2="23"></line><line x1="20" y1="9" x2="23" y2="9"></line><line x1="20" y1="15" x2="23" y2="15"></line><line x1="1" y1="9" x2="4" y2="9"></line><line x1="1" y1="15" x2="4" y2="15"></line></svg>
-					</div>
-					<span class="text-xl font-black text-white tracking-tighter uppercase">
-						Neuro<span class="text-blue-500">Dev</span>
-					</span>
-				</a>
-				<div class="hidden md:flex gap-10 items-center">
-          <a href="/magento" class="text-[11px] font-bold uppercase tracking-[0.3em] text-slate-400 hover:text-white transition-colors border-r border-white/10 pr-10">Magento 2</a>
-					<a href="#services" class="text-[11px] font-bold uppercase tracking-[0.3em] text-slate-400 hover:text-white transition-colors">Services</a>
-					<a href="#methodology" class="text-[11px] font-bold uppercase tracking-[0.3em] text-slate-400 hover:text-white transition-colors">Methodology</a>
-					<a href="#results" class="text-[11px] font-bold uppercase tracking-[0.3em] text-slate-400 hover:text-white transition-colors">Results</a>
-					<a href="#contact" class="px-6 py-2.5 bg-white text-black text-[11px] font-bold uppercase tracking-[0.2em] rounded-full hover:bg-blue-600 hover:text-white transition-all duration-300 shadow-[0_0_20px_rgba(255,255,255,0.1)]">Initialize</a>
-				</div>
-			</div>
-		</nav>
-
-		<!-- Hero Section -->
+	<!-- Hero Section -->
 		<header class="relative pt-44 pb-20 px-6 max-w-7xl mx-auto min-h-[90vh] flex flex-col justify-center">
 			<div class="reveal inline-flex items-center gap-2 px-3 py-1 mb-8 text-[10px] font-bold tracking-[0.2em] text-blue-500 uppercase bg-blue-500/10 border border-blue-500/20 rounded-full">
 				<span class="relative flex h-2 w-2">
@@ -259,7 +55,7 @@ const schemaData = {
 			
 			<h1 class="reveal text-[clamp(3.5rem,11vw,12rem)] font-black text-white leading-[0.85] tracking-tighter mb-16 text-glow">
 				ENGINEERING <br /> 
-				<span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-indigo-400 to-slate-600">
+				<span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-indigo-400 to-slate-400">
 					INTELLIGENT
 				</span> <br /> 
 				COMMERCE.
@@ -270,24 +66,26 @@ const schemaData = {
 					NeuroDev AI architects conversion-centric <span class="text-white font-bold">Magento 2</span> experiences, leveraging <span class="text-blue-500 font-bold tracking-normal">Neural Intelligence</span> to dominate technical search landscapes and automate enterprise growth.
 				</p>
 				<div class="reveal flex gap-4">
-					<a href="#contact" class="px-10 py-5 bg-blue-600 text-white font-bold rounded-2xl hover:bg-blue-500 transition-all flex items-center gap-3 group shadow-lg shadow-blue-900/20">
+					<a href="#contact" class="px-10 py-5 bg-blue-600 text-white font-bold rounded-2xl hover:bg-blue-500 transition-all flex items-center gap-3 group shadow-lg shadow-blue-900/20" aria-label="Navigate to contact form to start project">
 						Start Project 
-						<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="group-hover:translate-x-1 transition-transform" role="img" aria-label="Arrow pointing to project start"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+						<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="group-hover:translate-x-1 transition-transform" role="img" aria-label="Arrow icon"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
 					</a>
-					<a href="#services" class="px-10 py-5 bg-white/5 border border-white/10 text-white font-bold rounded-2xl hover:bg-white/10 transition-all">Our Stack</a>
+					<a href="#services" class="px-10 py-5 bg-white/5 border border-white/10 text-white font-bold rounded-2xl hover:bg-white/10 transition-all" aria-label="Navigate to services section to view technology stack">Our Stack</a>
 				</div>
 			</div>
 		</header>
 
     <!-- Trusted Ecosystem Section -->
-    <section class="py-12 border-y border-white/5 bg-white/[0.01]">
+    <section class="py-12 border-y border-white/5 bg-white/[0.01]" aria-label="Technology Partners and Platform Ecosystem">
       <div class="max-w-7xl mx-auto px-6 text-center">
-        <p class="text-[10px] font-bold uppercase tracking-[0.4em] text-slate-600 mb-10">Strategic Platform Ecosystem</p>
-        <div class="flex flex-wrap justify-center items-center gap-10 md:gap-20 opacity-30 grayscale hover:grayscale-0 transition-all duration-700">
-          <span class="text-white font-black tracking-tighter text-xl">MAGENTO</span>
-          <span class="text-white font-black tracking-tighter text-xl">ADOBE</span>
-          <span class="text-white font-black tracking-tighter text-xl">OPENAI</span>
-          <span class="text-white font-black tracking-tighter text-xl">GOOGLE</span>
+        <!-- ACCESSIBILITY FIX: Changed text-slate-600 to text-slate-400 (Better contrast: 4.5:1+) -->
+        <p class="text-[10px] font-bold uppercase tracking-[0.4em] text-slate-400 mb-10">Strategic Platform Ecosystem</p>
+        <!-- ACCESSIBILITY FIX: Removed opacity-30, changed to text-slate-400 for proper contrast (6.2:1 ratio) -->
+        <div class="flex flex-wrap justify-center items-center gap-10 md:gap-20 grayscale hover:grayscale-0 hover:text-white transition-all duration-700">
+          <span class="text-slate-400 font-black tracking-tighter text-xl">MAGENTO</span>
+          <span class="text-slate-400 font-black tracking-tighter text-xl">ADOBE</span>
+          <span class="text-slate-400 font-black tracking-tighter text-xl">OPENAI</span>
+          <span class="text-slate-400 font-black tracking-tighter text-xl">GOOGLE</span>
         </div>
       </div>
     </section>
@@ -302,20 +100,22 @@ const schemaData = {
 						<div class="p-4 bg-blue-600/10 rounded-2xl border border-blue-600/20">
 							<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Magento 2 Engineering Visual"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
 						</div>
-						<span class="text-[10px] font-mono text-slate-600 tracking-widest">01 / E-COMMERCE</span>
+						<!-- ACCESSIBILITY FIX: text-slate-600 → text-slate-400 -->
+						<span class="text-[10px] font-mono text-slate-400 tracking-widest" aria-label="Service Category 1: E-Commerce">01 / E-COMMERCE</span>
 					</div>
-					<h3 class="text-5xl font-bold text-white mb-6 tracking-tight">Magento 2 Engineering</h3>
-					<p class="text-lg text-slate-400 max-w-md leading-relaxed mb-8">
+					<h2 class="text-5xl font-bold text-white mb-6 tracking-tight">Magento 2 Engineering</h2>
+					<p class="text-lg text-slate-300 max-w-md leading-relaxed mb-8">
 						We solve the complex 1% of Magento problems. From enterprise migrations to sub-second checkout optimizations.
 					</p>
 					<div class="flex justify-between items-end mt-auto">
             <div class="flex flex-wrap gap-2">
+              <!-- ACCESSIBILITY FIX: text-slate-500 → text-slate-300 -->
               {['PWA Studio', 'Performance Architecture', 'Headless'].map(tag => (
-                <span class="px-3 py-1 bg-white/5 border border-white/5 rounded-full text-[9px] font-bold uppercase tracking-widest text-slate-500">{tag}</span>
+                <span class="px-3 py-1 bg-white/5 border border-white/5 rounded-full text-[9px] font-bold uppercase tracking-widest text-slate-300">{tag}</span>
               ))}
             </div>
-            <span class="hidden sm:flex items-center gap-2 text-blue-500 font-bold text-[10px] uppercase tracking-widest group-hover:gap-4 transition-all">
-              View Technical Deep-Dive <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            <span class="hidden sm:flex items-center gap-2 text-blue-500 font-bold text-[10px] uppercase tracking-widest group-hover:gap-4 transition-all" aria-label="Navigate to Magento Technical Deep Dive">
+              View Technical Deep-Dive <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
             </span>
           </div>
 				</a>
@@ -325,7 +125,7 @@ const schemaData = {
 					<div class="mb-12">
 						<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="AI Integration Logic"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
 					</div>
-					<h3 class="text-3xl font-bold mb-4 tracking-tight">Neural Logic</h3>
+					<h2 class="text-3xl font-bold mb-4 tracking-tight">Neural Logic</h2>
 					<p class="text-blue-100/80 text-sm leading-relaxed mb-8 italic font-light">Custom AI agents automating complex business logic.</p>
 					<div class="mt-auto pt-8 border-t border-white/20">
 						<div class="flex justify-between items-center">
@@ -342,13 +142,15 @@ const schemaData = {
 				</a>
 
 				<!-- Technical SEO -->
-				<a href="/seo" class="reveal md:col-span-4 bg-white/[0.03] border border-white/10 rounded-[2.5rem] p-12 hover:border-blue-500/20 transition-all group block">
-					<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-slate-500 group-hover:text-blue-500 transition-colors mb-6" role="img" aria-label="Technical SEO Search Architecture"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
-					<h3 class="text-2xl font-bold text-white mb-4 tracking-tight uppercase">Technical SEO</h3>
-					<p class="text-slate-500 text-sm leading-relaxed mb-6">
+				<a href="/seo" class="reveal md:col-span-4 bg-white/[0.03] border border-white/10 rounded-[2.5rem] p-12 hover:border-blue-500/20 transition-all group block" aria-label="View Technical SEO Services">
+					<!-- ACCESSIBILITY FIX: text-slate-500 → text-slate-300 -->
+					<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-slate-300 group-hover:text-blue-500 transition-colors mb-6" role="img" aria-label="Technical SEO Search Architecture"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+					<h2 class="text-2xl font-bold text-white mb-4 tracking-tight uppercase">Technical SEO</h2>
+					<!-- ACCESSIBILITY FIX: text-slate-500 → text-slate-300 -->
+					<p class="text-slate-300 text-sm leading-relaxed mb-6">
 						Data-led ranking dominance. We optimize the core site architecture, not just the keywords.
 					</p>
-          <span class="text-blue-500 font-bold text-[10px] uppercase tracking-widest flex items-center gap-2 group-hover:gap-3 transition-all">Audit Framework <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></span>
+          <span class="text-blue-500 font-bold text-[10px] uppercase tracking-widest flex items-center gap-2 group-hover:gap-3 transition-all" aria-label="View SEO Audit Framework">Audit Framework <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></span>
 				</a>
 
 				<!-- Visualizer -->
@@ -359,16 +161,16 @@ const schemaData = {
 						<div class="w-3 h-3 rounded-full bg-green-500/50"></div>
 					</div>
 					<div class="space-y-2 text-blue-400 code-scroller max-h-[220px] overflow-hidden">
-						<p class="flex gap-2"><span class="text-slate-600">neurodev:</span> <span class="text-white">~ $</span> git init</p>
-						<p class="flex gap-2"><span class="text-slate-600">neurodev:</span> <span class="text-white">~ $</span> analyze --target magento-store</p>
-						<p class="text-slate-500 px-2">[SYSTEM] Checking Varnish Cache...</p>
-						<p class="text-slate-500 px-2">[SYSTEM] Testing Redis throughput...</p>
-						<p class="text-slate-500 px-2">[SYSTEM] Auditing Third-Party JS...</p>
-						<p class="text-slate-500 px-2 mt-2">Scanning Core Vitals...</p>
+						<p class="flex gap-2"><span class="text-slate-400">neurodev:</span> <span class="text-white">~ $</span> git init</p>
+						<p class="flex gap-2"><span class="text-slate-400">neurodev:</span> <span class="text-white">~ $</span> analyze --target magento-store</p>
+						<p class="text-slate-300 px-2">[SYSTEM] Checking Varnish Cache...</p>
+						<p class="text-slate-300 px-2">[SYSTEM] Testing Redis throughput...</p>
+						<p class="text-slate-300 px-2">[SYSTEM] Auditing Third-Party JS...</p>
+						<p class="text-slate-300 px-2 mt-2">Scanning Core Vitals...</p>
 						<p class="text-green-500 px-2">[OK] LCP: 0.8s</p>
 						<p class="text-green-500 px-2">[OK] FID: 12ms</p>
 						<p class="text-green-500 px-2">[OK] CLS: 0.01</p>
-						<p class="flex gap-2 mt-4"><span class="text-slate-600">neurodev:</span> <span class="text-white">~ $</span> deploy --to neural-network</p>
+						<p class="flex gap-2 mt-4"><span class="text-slate-400">neurodev:</span> <span class="text-white">~ $</span> deploy --to neural-network</p>
 						<p class="text-blue-200 animate-pulse font-bold underline decoration-blue-500 underline-offset-4">OPTIMIZATION COMPLETE: 100/100 Mobile Score</p>
 					</div>
 				</div>
@@ -379,26 +181,28 @@ const schemaData = {
 		<section id="methodology" class="py-32 px-6 bg-white/[0.01] border-y border-white/5 relative overflow-hidden">
 			<div class="max-w-7xl mx-auto">
 				<div class="flex flex-col md:flex-row gap-20 items-center">
-					<div class="reveal flex-1">
-						<h2 class="text-6xl font-black text-white tracking-tighter mb-12 uppercase leading-none">
-							THE LOGIC <br /> <span class="text-slate-600 italic font-light">PROCESS.</span>
-						</h2>
-						<div class="space-y-12">
-							{[
-								{ title: "Archetype Analysis", desc: "We deconstruct your current tech debt and business constraints." },
-								{ title: "Neural Layering", desc: "Injecting automated logic triggers across your sales funnel." },
-								{ title: "Production Scaling", desc: "Hardening the architecture for multi-million dollar throughput." }
-							].map((step, idx) => (
-								<div class="flex gap-6 items-start">
-									<span class="text-blue-500 font-black text-xl">0{idx + 1}</span>
-									<div>
-										<h4 class="text-white font-bold text-lg mb-2">{step.title}</h4>
-										<p class="text-slate-500 text-sm leading-relaxed">{step.desc}</p>
-									</div>
+				<div class="reveal flex-1">
+					<h2 class="text-6xl font-black text-white tracking-tighter mb-12 uppercase leading-none">
+						<!-- ACCESSIBILITY FIX: text-slate-600 → text-slate-400 -->
+						THE LOGIC <br /> <span class="text-slate-400 italic font-light">PROCESS.</span>
+					</h2>
+					<div class="space-y-12">
+						{[
+							{ title: "Archetype Analysis", desc: "We deconstruct your current tech debt and business constraints." },
+							{ title: "Neural Layering", desc: "Injecting automated logic triggers across your sales funnel." },
+							{ title: "Production Scaling", desc: "Hardening the architecture for multi-million dollar throughput." }
+						].map((step, idx) => (
+							<div class="flex gap-6 items-start">
+								<span class="text-blue-500 font-black text-xl" aria-label={`Step ${idx + 1}`}>0{idx + 1}</span>
+								<div>
+									<h3 class="text-white font-bold text-lg mb-2">{step.title}</h3>
+									<!-- ACCESSIBILITY FIX: text-slate-500 → text-slate-300 -->
+									<p class="text-slate-300 text-sm leading-relaxed">{step.desc}</p>
 								</div>
-							))}
-						</div>
+							</div>
+						))}
 					</div>
+				</div>
 					<div class="reveal flex-1 relative">
 						<div class="aspect-square bg-blue-600/10 rounded-full flex items-center justify-center p-12 border border-blue-500/20">
 							<div class="w-full h-full border border-white/10 rounded-full p-12 animate-[spin_60s_linear_infinite] relative">
@@ -418,13 +222,15 @@ const schemaData = {
 			<div class="max-w-7xl mx-auto">
 				<div class="reveal text-center mb-20">
 					<h2 class="text-5xl font-black text-white tracking-tighter mb-4 uppercase">Technical Arsenal</h2>
-					<p class="text-slate-500 uppercase tracking-widest text-[10px] font-bold">Hardware & Software Integration</p>
+					<!-- ACCESSIBILITY FIX: text-slate-500 → text-slate-300 -->
+					<p class="text-slate-300 uppercase tracking-widest text-[10px] font-bold">Hardware & Software Integration</p>
 				</div>
 				<div class="grid grid-cols-2 md:grid-cols-4 gap-4">
 					{arsenal.map(tech => (
 						<div class="reveal p-8 border border-white/5 bg-white/[0.02] rounded-3xl hover:bg-blue-600/10 hover:border-blue-500/30 transition-all group cursor-default" aria-label={tech.aria}>
 							<p class="text-white font-bold text-sm mb-1">{tech.label}</p>
-							<p class="text-slate-600 text-[9px] uppercase tracking-widest font-bold">{tech.category}</p>
+							<!-- ACCESSIBILITY FIX: text-slate-600 → text-slate-400 -->
+							<p class="text-slate-400 text-[9px] uppercase tracking-widest font-bold">{tech.category}</p>
 						</div>
 					))}
 				</div>
@@ -437,7 +243,8 @@ const schemaData = {
 				<div class="reveal grid md:grid-cols-2 gap-20 items-end mb-20">
 					<div>
 						<h2 class="text-6xl font-black text-white tracking-tighter uppercase leading-none mb-6">Success <br/> Metrics.</h2>
-						<p class="text-slate-400 text-lg">Measurable intelligence delivered across the e-commerce spectrum.</p>
+						<!-- ACCESSIBILITY FIX: text-slate-400 → text-slate-300 for better visibility -->
+						<p class="text-slate-300 text-lg">Measurable intelligence delivered across the e-commerce spectrum.</p>
 					</div>
 					<div class="flex gap-12">
 						{[
@@ -445,9 +252,10 @@ const schemaData = {
 							{ val: "45", unit: "%", label: "AOV Increase" },
 							{ val: "24/7", unit: "", label: "AI Support" }
 						].map(m => (
-							<div class="text-center">
+							<div class="text-center" role="group" aria-label={`Metric: ${m.label}`}>
 								<p class="text-4xl font-black text-blue-500">{m.val}<span class="text-sm">{m.unit}</span></p>
-								<p class="text-[10px] font-bold uppercase tracking-widest text-slate-500">{m.label}</p>
+								<!-- ACCESSIBILITY FIX: text-slate-500 → text-slate-300 -->
+								<p class="text-[10px] font-bold uppercase tracking-widest text-slate-300">{m.label}</p>
 							</div>
 						))}
 					</div>
@@ -463,8 +271,8 @@ const schemaData = {
 							<div class={`absolute inset-0 bg-${caseStudy.color} group-hover:scale-110 transition-transform duration-1000`} />
 							<div class="absolute bottom-0 p-12 z-20">
 								<p class="text-blue-500 font-mono text-[10px] mb-2 uppercase tracking-[0.3em]">Case Study {caseStudy.id}</p>
-								<h4 class="text-3xl font-bold text-white mb-4">{caseStudy.title}</h4>
-								<p class="text-slate-400 text-sm mb-6 max-w-sm">{caseStudy.desc}</p>
+								<h3 class="text-3xl font-bold text-white mb-4">{caseStudy.title}</h3>
+								<p class="text-slate-300 text-sm mb-6 max-w-sm">{caseStudy.desc}</p>
 								<span class="flex items-center gap-2 text-white font-bold text-xs uppercase tracking-widest group/btn cursor-pointer">
 									View Logic <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="group-hover/btn:translate-x-1 transition-transform" role="img" aria-label="View Case Study Arrow"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
 								</span>
@@ -480,7 +288,8 @@ const schemaData = {
 			<div class="max-w-3xl mx-auto">
 				<div class="reveal text-center mb-20">
 					<h2 class="text-5xl font-black text-white tracking-tighter mb-4 uppercase">Neural Debugging</h2>
-					<p class="text-slate-500 uppercase tracking-widest text-[10px] font-bold">Frequently Queried Parameters</p>
+					<!-- ACCESSIBILITY FIX: text-slate-500 → text-slate-300 -->
+					<p class="text-slate-300 uppercase tracking-widest text-[10px] font-bold">Frequently Queried Parameters</p>
 				</div>
 				<div class="space-y-4">
 					{faqData.map(faq => (
@@ -489,7 +298,7 @@ const schemaData = {
 								<span class="text-white font-bold">{faq.q}</span>
 								<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="group-open:rotate-180 transition-transform" role="img" aria-label="Toggle FAQ"><polyline points="6 9 12 15 18 9"></polyline></svg>
 							</summary>
-							<div class="p-8 pt-0 text-slate-500 text-sm leading-relaxed border-t border-white/5">
+							<div class="p-8 pt-0 text-slate-300 text-sm leading-relaxed border-t border-white/5">
 								{faq.a}
 							</div>
 						</details>
@@ -503,7 +312,8 @@ const schemaData = {
 			<div class="max-w-4xl mx-auto">
 				<div class="reveal text-center mb-16">
 					<h2 class="text-6xl font-black text-white tracking-tighter mb-4 uppercase leading-none">Initialize <br/> <span class="text-blue-500 underline underline-offset-8 decoration-4">Project.</span></h2>
-					<p class="text-slate-500 text-lg">Send your mission parameters for a technical audit.</p>
+					<!-- ACCESSIBILITY FIX: text-slate-500 → text-slate-300 -->
+					<p class="text-slate-300 text-lg">Send your mission parameters for a technical audit.</p>
 				</div>
 
 				<form 
@@ -519,19 +329,20 @@ const schemaData = {
             <label>Don't fill this out if you're human: <input name="bot-field" /></label>
           </p>
 					
+					<!-- ACCESSIBILITY FIX: All labels changed from text-slate-500 → text-slate-300 -->
 					<div class="flex flex-col gap-2">
-						<label for="name" class="text-[10px] font-bold uppercase tracking-widest text-slate-500 ml-4">Full Name</label>
-						<input type="text" id="name" name="name" required placeholder="Full Name" class="px-6 py-4 rounded-2xl text-white font-medium" />
+						<label for="name" class="text-[10px] font-bold uppercase tracking-widest text-slate-300 ml-4">Full Name</label>
+						<input type="text" id="name" name="name" required placeholder="Full Name" class="px-6 py-4 rounded-2xl text-white font-medium" aria-required="true" />
 					</div>
 
 					<div class="flex flex-col gap-2">
-						<label for="email" class="text-[10px] font-bold uppercase tracking-widest text-slate-500 ml-4">Email Address</label>
-						<input type="email" id="email" name="email" required placeholder="your@email.com" class="px-6 py-4 rounded-2xl text-white font-medium" />
+						<label for="email" class="text-[10px] font-bold uppercase tracking-widest text-slate-300 ml-4">Email Address</label>
+						<input type="email" id="email" name="email" required placeholder="your@email.com" class="px-6 py-4 rounded-2xl text-white font-medium" aria-required="true" />
 					</div>
 
 					<div class="md:col-span-2 flex flex-col gap-2">
-						<label for="service" class="text-[10px] font-bold uppercase tracking-widest text-slate-500 ml-4">Requested Intel</label>
-						<select id="service" name="service" class="px-6 py-4 rounded-2xl text-slate-300 font-medium cursor-pointer">
+						<label for="service" class="text-[10px] font-bold uppercase tracking-widest text-slate-300 ml-4">Requested Intel</label>
+						<select id="service" name="service" class="px-6 py-4 rounded-2xl text-slate-300 font-medium cursor-pointer" aria-label="Select service type">
 							<option value="magento">Magento Performance Audit</option>
 							<option value="ai">Custom AI Agent Integration</option>
 							<option value="seo">Technical SEO Dominance</option>
@@ -540,12 +351,12 @@ const schemaData = {
 					</div>
 
 					<div class="md:col-span-2 flex flex-col gap-2">
-						<label for="message" class="text-[10px] font-bold uppercase tracking-widest text-slate-500 ml-4">Mission Parameters</label>
-						<textarea id="message" name="message" rows="5" required placeholder="Describe your project goals..." class="px-6 py-4 rounded-2xl text-white font-medium resize-none"></textarea>
+						<label for="message" class="text-[10px] font-bold uppercase tracking-widest text-slate-300 ml-4">Mission Parameters</label>
+						<textarea id="message" name="message" rows="5" required placeholder="Describe your project goals..." class="px-6 py-4 rounded-2xl text-white font-medium resize-none" aria-required="true"></textarea>
 					</div>
 
 					<div class="md:col-span-2 mt-4">
-						<button type="submit" class="w-full py-6 bg-blue-600 hover:bg-blue-700 text-white font-black uppercase tracking-[0.3em] rounded-2xl transition-all shadow-xl shadow-blue-900/20 active:scale-[0.98]">
+						<button type="submit" class="w-full py-6 bg-blue-600 hover:bg-blue-700 text-white font-black uppercase tracking-[0.3em] rounded-2xl transition-all shadow-xl shadow-blue-900/20 active:scale-[0.98]" aria-label="Submit contact form to deploy strategy">
 							Deploy Strategy
 						</button>
 					</div>
@@ -553,46 +364,5 @@ const schemaData = {
 			</div>
 		</section>
 
-		<!-- Footer -->
-		<footer class="py-20 border-t border-white/5 px-6">
-			<div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
-				<div class="reveal text-sm text-slate-600 font-bold uppercase tracking-widest">
-					&copy; 2025 NeuroDev AI • Engineered in Long Beach
-				</div>
-				<div class="flex gap-12 text-[10px] font-bold uppercase tracking-[0.4em] text-slate-500">
-					<a href="#" class="hover:text-blue-500 transition-colors">Privacy</a>
-					<a href="#" class="hover:text-blue-500 transition-colors">Terms</a>
-					<a href="https://github.com/FreddyKrugerCODE" class="hover:text-blue-500 transition-colors">Github</a>
-				</div>
-			</div>
-		</footer>
-
-		<script>
-			// Cinematic Reveal Logic
-			const observerOptions = { threshold: 0.1 };
-			const observer = new IntersectionObserver((entries) => {
-				entries.forEach(entry => {
-					if (entry.isIntersecting) {
-						entry.target.classList.add('active');
-					}
-				});
-			}, observerOptions);
-			document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-
-			// Navbar Scroll Effect
-			window.addEventListener('scroll', () => {
-				const nav = document.getElementById('navbar');
-				if (nav) {
-					if (window.scrollY > 50) {
-						nav.classList.add('glass', 'py-4');
-						nav.classList.remove('py-8', 'border-transparent');
-						nav.classList.add('border-white/10');
-					} else {
-						nav.classList.remove('glass', 'py-4', 'border-white/10');
-						nav.classList.add('py-8', 'border-transparent');
-					}
-				}
-			});
-		</script>
-	</body>
-</html>
+	<!-- All scripts now centralized in Layout.astro (Reveal Observer + Navbar Scroll) -->
+</Layout>

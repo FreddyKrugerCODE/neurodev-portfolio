@@ -1,44 +1,36 @@
 ---
 // NeuroDev AI - Submission Success Page
+import Layout from '../layouts/Layout.astro';
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width" />
-		<title>Mission Success | NeuroDev AI</title>
-		<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;800&display=swap" rel="stylesheet">
-		<style>
-			@import "tailwindcss";
-			body {
-				font-family: 'Plus Jakarta Sans', sans-serif;
-				background-color: #020202;
-			}
-			.glass {
-				background: rgba(15, 15, 15, 0.6);
-				backdrop-filter: blur(20px);
-				border: 1px solid rgba(255, 255, 255, 0.05);
-			}
-		</style>
-	</head>
-	<body class="text-slate-300 min-h-screen flex items-center justify-center p-6 overflow-hidden">
-		<!-- Background Orbs -->
-		<div class="fixed inset-0 -z-10 pointer-events-none">
-			<div class="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] bg-blue-900/20 blur-[150px] rounded-full"></div>
-			<div class="absolute bottom-[-10%] right-[-10%] w-[50%] h-[50%] bg-indigo-900/10 blur-[150px] rounded-full"></div>
-		</div>
+<Layout 
+	title="Mission Success | NeuroDev AI" 
+	description="Your parameters have been received. Our neural engine is currently auditing your request. Expect a strategic response within 24 hours."
+>
+	<!-- Background Orbs -->
+	<div class="fixed inset-0 -z-10 pointer-events-none">
+		<div class="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] bg-blue-900/20 blur-[150px] rounded-full"></div>
+		<div class="absolute bottom-[-10%] right-[-10%] w-[50%] h-[50%] bg-indigo-900/10 blur-[150px] rounded-full"></div>
+	</div>
 
+	<div class="min-h-screen flex items-center justify-center p-6">
 		<div class="max-w-2xl w-full glass p-16 rounded-[3rem] text-center">
 			<div class="w-20 h-20 bg-blue-600/20 border border-blue-500/30 rounded-2xl flex items-center justify-center mx-auto mb-10">
-				<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+				<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Success checkmark icon"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
 			</div>
-			<h1 class="text-5xl font-black text-white tracking-tighter mb-6 uppercase">Mission <br/> <span class="text-blue-500">Initialized.</span></h1>
-			<p class="text-slate-400 text-lg mb-12 leading-relaxed">
-				Your parameters have been received. Our neural engine is currently auditing your request. Expect a strategic response within 24 hours.
+			<h1 class="text-5xl font-black text-white tracking-tighter mb-6 uppercase">
+				Mission <br/> <span class="text-blue-500">Initialized.</span>
+			</h1>
+			<p class="text-slate-300 text-lg mb-12 leading-relaxed">
+				Your parameters have been received. Our neural engine is currently auditing your request. Expect a strategic response within <span class="text-white font-bold">24 hours</span>.
 			</p>
-			<a href="/" class="inline-block px-12 py-5 bg-white text-black font-black uppercase tracking-[0.2em] rounded-full hover:bg-blue-600 hover:text-white transition-all">
+			<a 
+				href="/" 
+				class="inline-block px-12 py-5 bg-white text-black font-black uppercase tracking-[0.2em] rounded-full hover:bg-blue-600 hover:text-white transition-all"
+				aria-label="Return to homepage"
+			>
 				Return to Base
 			</a>
 		</div>
-	</body>
-</html>
+	</div>
+</Layout>

@@ -1,6 +1,7 @@
 import { defineConfig } from 'astro/config';
 import tailwindcss from '@tailwindcss/vite'; // Your original Tailwind
 import sitemap from '@astrojs/sitemap';      // The new Sitemap
+import partytown from '@astrojs/partytown';  // Off-main-thread analytics
 
 // https://astro.build/config
 export default defineConfig({
@@ -11,6 +12,12 @@ export default defineConfig({
   },
 
   integrations: [
+    // PERFORMANCE: Move analytics to web worker (boosts Lighthouse Performance score)
+    partytown({
+      config: {
+        forward: ["dataLayer.push"], // Required for GA4
+      },
+    }),
     sitemap({
       // Filter out pages you don't want indexed
       filter: (page) => page !== 'https://www.neurodevai.com/404',

@@ -1,1 +1,125 @@
 @import "tailwindcss";
+
+/* ===================================================================
+   NEURODEV AI - GLOBAL STYLESHEET
+   Centralized styles available to all pages for consistency
+   =================================================================== */
+
+/* Theme Variables */
+@theme {
+	--color-brand-bg: #020202;
+	--color-brand-blue: #2563eb;
+}
+
+:root {
+	color-scheme: dark;
+	--brand-blue: #2563eb;
+}
+
+/* Base Typography & Body Styles */
+body {
+	font-family: 'Plus Jakarta Sans', sans-serif;
+	background-color: var(--color-brand-bg);
+	letter-spacing: -0.01em;
+}
+
+/* Heading Typography (Global) */
+h1, h2, h3, .font-black {
+	letter-spacing: -0.04em;
+	text-wrap: balance;
+}
+
+/* Hero Paragraph Styling */
+.hero-paragraph {
+	line-height: 1.6;
+	letter-spacing: -0.02em;
+	text-wrap: balance;
+}
+
+/* ===================================================================
+   GLASS MORPHISM EFFECTS
+   =================================================================== */
+
+.glass {
+	background: rgba(15, 15, 15, 0.6);
+	backdrop-filter: blur(20px);
+	border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* ===================================================================
+   TEXT EFFECTS
+   =================================================================== */
+
+.text-glow {
+	text-shadow: 0 0 30px rgba(37, 99, 235, 0.3);
+}
+
+/* ===================================================================
+   BACKGROUND PATTERNS
+   =================================================================== */
+
+.neural-grid {
+	background-image: radial-gradient(rgba(37, 99, 235, 0.1) 1px, transparent 1px);
+	background-size: 30px 30px;
+}
+
+/* ===================================================================
+   SCROLL & MASK EFFECTS
+   =================================================================== */
+
+.code-scroller {
+	mask-image: linear-gradient(to bottom, transparent, black 20%, black 80%, transparent);
+}
+
+/* ===================================================================
+   CINEMATIC REVEAL ANIMATIONS
+   =================================================================== */
+
+.reveal {
+	opacity: 0;
+	transform: translateY(30px);
+	transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal.active {
+	opacity: 1;
+	transform: translateY(0);
+}
+
+/* ===================================================================
+   FORM STYLING (Global Input/Textarea/Select)
+   =================================================================== */
+
+input, textarea, select {
+	background: rgba(255, 255, 255, 0.03) !important;
+	border: 1px solid rgba(255, 255, 255, 0.1) !important;
+	transition: all 0.3s ease;
+}
+
+input:focus, textarea:focus, select:focus {
+	border-color: #2563eb !important;
+	background: rgba(37, 99, 235, 0.05) !important;
+	outline: none;
+}
+
+/* ===================================================================
+   BOT PROTECTION (Honeypot Field)
+   =================================================================== */
+
+.hidden-trap {
+	display: none;
+}
+
+/* ===================================================================
+   UTILITY CLASSES
+   =================================================================== */
+
+/* Selection Color */
+::selection {
+	background-color: rgba(37, 99, 235, 0.3);
+}
+
+/* Smooth Scroll Behavior */
+html.scroll-smooth {
+	scroll-behavior: smooth;
+}
