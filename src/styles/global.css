@@ -102,6 +102,20 @@ input:focus, textarea:focus, select:focus {
 	outline: none;
 }
 
+/* ACCESSIBILITY: Dropdown option styling for dark theme */
+select option {
+	background-color: #020202 !important;
+	color: #cbd5e1 !important;
+	padding: 12px;
+}
+
+select option:hover,
+select option:focus,
+select option:checked {
+	background-color: #2563eb !important;
+	color: #ffffff !important;
+}
+
 /* ===================================================================
    BOT PROTECTION (Honeypot Field)
    =================================================================== */

@@ -13,6 +13,7 @@ interface Props {
 	title?: string;
 	description?: string;
 	additionalSchema?: object;
+	disableAnalytics?: boolean; // NEW: Allow pages to opt-out of GA4 tracking
 }
 
 // GLOBAL FALLBACKS: Ensure every page has strong defaults
@@ -23,7 +24,8 @@ const SITE_URL = Astro.site?.toString() || 'https://www.neurodevai.com';
 const { 
 	title = DEFAULT_TITLE, 
 	description = DEFAULT_DESCRIPTION,
-	additionalSchema 
+	additionalSchema,
+	disableAnalytics = false // NEW: Default to tracking enabled
 } = Astro.props;
 
 // 1. SENIOR SEO: Canonical URL Logic (Strip Query Params for SEO Safety)
@@ -33,30 +35,42 @@ const canonicalURL = new URL(canonicalPath, SITE_URL).href;
 // 2. SENIOR SEO: Social Image Logic
 const socialImage = new URL('/social-preview.jpg', SITE_URL).href;
 
-// 3. SENIOR SEO: Global Organization Schema (Always Present)
+// 3. SENIOR SEO: Global LocalBusiness Schema (Always Present)
+// WHY: Establishes geographic + service context for Google (critical for local SEO + relevance signals)
 const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
-  "name": "NeuroDev AI",
-  "alternateName": "NeuroDev",
-  "description": "Enterprise Magento 2 engineering, custom AI agent integration, and technical SEO dominance agency based in Long Beach, California.",
+  "name": "NeuroDevAI",
+  "alternateName": "NeuroDev AI",
+  "description": "AI-Powered Web Design and Development Agency specializing in Magento, Astro, and Custom Automations.",
   "url": SITE_URL,
   "logo": `${SITE_URL}/favicon.png`,
   "image": socialImage,
+  "telephone": "+15625427296",
+  "email": "webdesigner.fred@gmail.com",
   "priceRange": "$$$",
   "address": {
     "@type": "PostalAddress",
+    "streetAddress": "1892 Fashion Ave APT#2",
     "addressLocality": "Long Beach",
     "addressRegion": "CA",
-    "postalCode": "90802",
+    "postalCode": "90810",
     "addressCountry": "US"
   },
   "geo": {
     "@type": "GeoCoordinates",
-    "latitude": 33.7701,
-    "longitude": -118.1937
+    "latitude": 33.7986,
+    "longitude": -118.2087
   },
-  "knowsAbout": ["Magento 2 Development", "AI Integration", "Technical SEO", "Adobe Commerce Cloud", "Neural Networks"],
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      "opens": "09:00",
+      "closes": "17:00"
+    }
+  ],
+  "knowsAbout": ["Magento 2 Development", "AI Integration", "Technical SEO", "Adobe Commerce Cloud", "Neural Networks", "Web Design", "Astro Framework", "AI Automation"],
   "sameAs": ["https://github.com/neurodevai"]
 };
 
@@ -104,13 +118,18 @@ const schemaData = additionalSchema
 
 		<!-- Google Analytics (GA4) - OFF-MAIN-THREAD via Partytown -->
 		<!-- WHY: Moves analytics to web worker, preventing main thread blocking = +10-15 Lighthouse Performance points -->
-		<script type="text/partytown" async src="https://www.googletagmanager.com/gtag/js?id=G-TH54RDVRVK"></script>
-		<script type="text/partytown">
-		  window.dataLayer = window.dataLayer || [];
-		  function gtag(){dataLayer.push(arguments);}
-		  gtag('js', new Date());
-		  gtag('config', 'G-TH54RDVRVK');
-		</script>
+		<!-- PRIVACY: Can be disabled on specific pages (e.g., /success) via disableAnalytics prop -->
+		{!disableAnalytics && (
+			<>
+				<script type="text/partytown" async src="https://www.googletagmanager.com/gtag/js?id=G-TH54RDVRVK"></script>
+				<script type="text/partytown">
+				  window.dataLayer = window.dataLayer || [];
+				  function gtag(){dataLayer.push(arguments);}
+				  gtag('js', new Date());
+				  gtag('config', 'G-TH54RDVRVK');
+				</script>
+			</>
+		)}
 
 		<!-- Critical Inline Styles (Minimal - Full styles in global.css) -->
 		<style is:global>
@@ -143,7 +162,7 @@ const schemaData = additionalSchema
 					<a href="/#services" class="text-[11px] font-bold uppercase tracking-[0.3em] text-slate-300 hover:text-white transition-colors" aria-label="Navigate to Services Section">Services</a>
 					<a href="/#methodology" class="text-[11px] font-bold uppercase tracking-[0.3em] text-slate-300 hover:text-white transition-colors" aria-label="Navigate to Methodology Section">Methodology</a>
 					<a href="/#results" class="text-[11px] font-bold uppercase tracking-[0.3em] text-slate-300 hover:text-white transition-colors" aria-label="Navigate to Results Section">Results</a>
-					<a href="/#contact" class="px-6 py-2.5 bg-white text-black text-[11px] font-bold uppercase tracking-[0.2em] rounded-full hover:bg-blue-600 hover:text-white transition-all duration-300 shadow-[0_0_20px_rgba(255,255,255,0.1)]" aria-label="Start Project Contact Form">Initialize</a>
+					<a href="/contact" class="px-6 py-2.5 bg-white text-black text-[11px] font-bold uppercase tracking-[0.2em] rounded-full hover:bg-blue-600 hover:text-white transition-all duration-300 shadow-[0_0_20px_rgba(255,255,255,0.1)]" aria-label="Start Project Contact Form">Initialize</a>
 				</div>
 			</div>
 		</nav>
@@ -159,7 +178,7 @@ const schemaData = additionalSchema
 				<!-- ACCESSIBILITY: Changed text-slate-500 to text-slate-300 + Added explicit aria-labels -->
 				<div class="flex gap-10 text-[9px] font-bold uppercase tracking-widest text-slate-300">
 					<a href="https://github.com/FreddyKrugerCODE" class="hover:text-blue-500 transition" aria-label="Visit NeuroDev AI GitHub Profile" rel="noopener noreferrer" target="_blank">GitHub</a>
-					<a href="/#contact" class="hover:text-blue-500 transition" aria-label="Navigate to Contact Form">Contact</a>
+					<a href="/contact" class="hover:text-blue-500 transition" aria-label="Navigate to Contact Form">Contact</a>
 					<a href="#" class="hover:text-blue-500 transition" aria-label="View Legal Information">Legal</a>
 				</div>
 			</div>
