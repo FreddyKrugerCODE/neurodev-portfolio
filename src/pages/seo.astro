@@ -64,6 +64,37 @@ const seoServiceSchema = {
 		</p>
 	</header>
 
+	<!-- The NeuroDevAI Difference - ASYMMETRIC LAYOUT -->
+	<section class="py-32 px-6 max-w-7xl mx-auto">
+		<div class="grid md:grid-cols-12 gap-12 items-center">
+			<!-- Left: Title Card -->
+			<div class="md:col-span-5 reveal">
+				<div class="bg-gradient-to-br from-blue-600 to-indigo-700 p-12 rounded-[2.5rem] shadow-2xl shadow-blue-900/30 min-h-[400px] flex flex-col justify-center">
+					<div class="inline-block px-3 py-1 mb-6 text-[10px] font-bold tracking-[0.2em] text-white uppercase bg-white/20 border border-white/30 rounded-full w-fit">
+						AI-First Approach
+					</div>
+					<h2 class="text-5xl md:text-6xl font-black text-white mb-6 tracking-tighter uppercase leading-none">
+						The NeuroDevAI <span class="text-blue-200">Difference.</span>
+					</h2>
+					<p class="text-blue-100 text-sm uppercase tracking-widest font-bold">Intelligence vs. Tactics</p>
+				</div>
+			</div>
+
+			<!-- Right: Content -->
+			<div class="md:col-span-7 reveal space-y-6 text-slate-300 leading-relaxed text-lg">
+				<p>
+					Traditional SEO agencies focus on keyword density and backlink volume. We engineer search dominance through <strong class="text-white">Natural Language Processing (NLP)</strong> and semantic intent mapping. Our proprietary AI models analyze your competitors' topical authority using Knowledge Graphs, identifying content gaps that human auditors miss.
+				</p>
+				<p>
+					By leveraging advanced <strong class="text-white">Semantic Search</strong> principles, we reverse-engineer Google's understanding of entity relationships. This means your content doesn't just rank for keywords—it becomes the authoritative source for entire topic clusters. We map your site architecture to match how modern search engines interpret contextual relevance, not outdated keyword matching algorithms.
+				</p>
+				<p>
+					Our technical audits go beyond surface-level recommendations. We use large language models to simulate search intent patterns, predicting which pages will convert based on user query semantics. This AI-first approach positions your site to dominate voice search, featured snippets, and Google's increasingly intelligent answer boxes.
+				</p>
+			</div>
+		</div>
+	</section>
+
 	<!-- Capabilities Grid (Audit Process) -->
 	<section class="py-32 px-6 bg-white/[0.01] border-y border-white/5">
 		<div class="max-w-7xl mx-auto">
@@ -80,6 +111,199 @@ const seoServiceSchema = {
 						<p class="text-slate-300 leading-relaxed text-lg">{item.desc}</p>
 					</div>
 				))}
+			</div>
+		</div>
+	</section>
+
+	<!-- Technical Excellence Grid - MIXED SIZE CARDS -->
+	<section class="py-32 px-6 bg-white/[0.01] border-y border-white/5">
+		<div class="max-w-7xl mx-auto">
+			<div class="text-center mb-20">
+				<h2 class="reveal text-4xl md:text-6xl font-black text-white uppercase tracking-tighter mb-4">Technical <span class="text-blue-500">Excellence.</span></h2>
+				<p class="reveal text-slate-400 font-bold uppercase tracking-widest text-[10px]">Performance optimization as the foundation of search visibility</p>
+			</div>
+
+			<div class="grid md:grid-cols-4 gap-8">
+				<!-- Large Featured Card - Core Web Vitals -->
+				<div class="reveal md:col-span-2 md:row-span-2 glass p-12 rounded-[2.5rem] hover:border-blue-500/30 transition-all group relative overflow-hidden">
+					<div class="absolute top-6 right-6 px-3 py-1 bg-blue-500/20 border border-blue-500/40 rounded-full">
+						<span class="text-blue-400 font-bold text-[9px] uppercase tracking-widest">Priority #1</span>
+					</div>
+					<div class="w-14 h-14 bg-blue-600/10 border border-blue-500/20 rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform">
+						<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-label="Core Web Vitals Speed"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+					</div>
+					<h3 class="text-4xl font-bold text-white mb-6 uppercase tracking-tight">Core Web Vitals Mastery</h3>
+					<p class="text-slate-300 leading-relaxed text-lg mb-6">
+						Google's ranking algorithm now prioritizes <strong class="text-white">Core Web Vitals</strong> as primary signals. We obsess over three metrics: <strong class="text-white">Largest Contentful Paint (LCP)</strong>, <strong class="text-white">Cumulative Layout Shift (CLS)</strong>, and <strong class="text-white">First Input Delay (FID)</strong>. Our engineering approach ensures your site achieves the coveted "Good" status across 95% of real-world user sessions.
+					</p>
+					<p class="text-slate-300 leading-relaxed text-lg">
+						Through aggressive image optimization, critical CSS inlining, and preload strategies, we consistently deliver LCP under 2.5 seconds—even on content-heavy e-commerce product pages.
+					</p>
+				</div>
+
+				<!-- Compact Card - SSR -->
+				<div class="reveal md:col-span-2 bg-[#0a0a0a] border border-white/10 p-8 rounded-[2rem] hover:border-blue-500/20 transition-all">
+					<div class="flex items-start gap-4 mb-4">
+						<div class="w-10 h-10 bg-blue-600/10 border border-blue-500/20 rounded-xl flex items-center justify-center shrink-0">
+							<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-label="Server Side Rendering"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+						</div>
+						<span class="text-slate-400 text-[9px] font-bold uppercase tracking-widest">Server Architecture</span>
+					</div>
+					<h3 class="text-2xl font-bold text-white mb-4 uppercase tracking-tight">Server-Side Rendering</h3>
+					<p class="text-slate-300 leading-relaxed">
+						Client-side JavaScript frameworks destroy crawlability. We architect sites using <strong class="text-white">Server-Side Rendering</strong> and static site generation (SSG) to deliver fully-formed HTML to search engine crawlers.
+					</p>
+				</div>
+
+				<!-- Tall Card - Mobile First -->
+				<div class="reveal md:col-span-2 glass p-8 rounded-[2rem] hover:border-blue-500/30 transition-all">
+					<div class="flex items-center gap-3 mb-6">
+						<div class="w-10 h-10 bg-blue-600/10 border border-blue-500/20 rounded-xl flex items-center justify-center">
+							<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-label="Mobile First"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
+						</div>
+						<span class="text-blue-500 font-bold text-[9px] uppercase tracking-widest">Google Standard</span>
+					</div>
+					<h3 class="text-2xl font-bold text-white mb-4 uppercase tracking-tight">Mobile-First Indexing</h3>
+					<p class="text-slate-300 leading-relaxed">
+						Google's <strong class="text-white">Mobile-First Indexing</strong> means your mobile experience IS your ranking. We audit viewport performance, touch target sizing, and responsive breakpoint logic to ensure parity over desktop versions.
+					</p>
+				</div>
+
+				<!-- Wide Bottom Card - Schema -->
+				<div class="reveal md:col-span-4 bg-gradient-to-r from-blue-600/10 to-transparent border border-blue-500/20 p-10 rounded-[2.5rem] flex items-center gap-8 hover:from-blue-600/20 transition-all">
+					<div class="w-16 h-16 bg-blue-600/20 border border-blue-500/30 rounded-2xl flex items-center justify-center shrink-0">
+						<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-label="Schema Structured Data"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+					</div>
+					<div>
+						<div class="flex items-center gap-3 mb-2">
+							<h3 class="text-3xl font-bold text-white uppercase tracking-tight">Schema.org Structured Data</h3>
+							<span class="px-3 py-1 bg-blue-500/20 border border-blue-500/40 rounded-full text-blue-400 font-bold text-[9px] uppercase tracking-widest">+40% CTR</span>
+						</div>
+						<p class="text-slate-300 leading-relaxed text-lg">
+							Structured data is the bridge between your content and Google's <strong class="text-white">Knowledge Graphs</strong>. We implement comprehensive <strong class="text-white">Schema.org</strong> markup (JSON-LD format) for products, reviews, FAQs, organizations, and breadcrumb navigation. This semantic annotation enables rich results: star ratings in SERPs, price displays, availability status, and enhanced sitelinks.
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Data-Driven Strategy - BENTO GRID LAYOUT -->
+	<section class="py-32 px-6 max-w-7xl mx-auto">
+		<div class="reveal text-center mb-20">
+			<h2 class="text-4xl md:text-6xl font-black text-white uppercase tracking-tighter mb-4">Data-Driven <span class="text-blue-500">Strategy.</span></h2>
+			<p class="text-slate-400 font-bold uppercase tracking-widest text-[10px]">Competitive intelligence and algorithmic content architecture</p>
+		</div>
+		
+		<div class="grid md:grid-cols-3 gap-8">
+			<!-- Large Feature Card -->
+			<div class="reveal md:col-span-2 md:row-span-2 bg-[#0a0a0a] border border-white/10 rounded-[2.5rem] p-12">
+				<div class="flex items-start gap-4 mb-8">
+					<div class="w-12 h-12 bg-blue-600/10 border border-blue-500/20 rounded-xl flex items-center justify-center shrink-0">
+						<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-label="Competitive Intelligence"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
+					</div>
+					<div>
+						<h3 class="text-2xl font-bold text-white uppercase tracking-tight mb-2">Competitive Intelligence</h3>
+						<p class="text-slate-400 text-sm uppercase tracking-widest font-bold">Reverse Engineering</p>
+					</div>
+				</div>
+				<p class="text-slate-300 leading-relaxed text-lg">
+					Our competitive intelligence framework reverse-engineers your rivals' search visibility. Using proprietary crawlers and NLP analysis, we map their topical coverage, identify backlink gap opportunities, and detect content decay patterns. This intelligence informs a surgical content strategy that targets high-value, low-competition semantic territories.
+				</p>
+			</div>
+
+			<!-- Stacked Small Cards -->
+			<div class="reveal glass p-8 rounded-[2rem]">
+				<h3 class="text-xl font-bold text-white uppercase tracking-tight mb-4">Crawl Budget</h3>
+				<p class="text-slate-300 leading-relaxed text-sm">
+					<strong class="text-white">Crawl Budget Management</strong> is critical for large-scale sites. We optimize internal linking architecture, eliminate crawl traps, and implement strategic noindex directives.
+				</p>
+			</div>
+
+			<div class="reveal bg-gradient-to-br from-blue-600/20 to-indigo-700/20 border border-blue-500/30 p-8 rounded-[2rem]">
+				<h3 class="text-xl font-bold text-white uppercase tracking-tight mb-4">Programmatic SEO</h3>
+				<p class="text-slate-300 leading-relaxed text-sm">
+					For enterprise clients, we deploy <strong class="text-white">programmatic SEO</strong> frameworks that auto-generate semantically-optimized landing pages at scale with E-E-A-T compliance.
+				</p>
+			</div>
+
+			<!-- Bottom Wide Card -->
+			<div class="reveal md:col-span-3 border border-white/5 bg-white/[0.02] p-10 rounded-[2rem] flex items-center gap-8">
+				<div class="flex-shrink-0">
+					<div class="w-16 h-16 bg-blue-600/10 border border-blue-500/20 rounded-2xl flex items-center justify-center">
+						<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-label="Log File Analysis"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+					</div>
+				</div>
+				<div>
+					<h3 class="text-2xl font-bold text-white uppercase tracking-tight mb-2">Log File Analysis</h3>
+					<p class="text-slate-300 leading-relaxed">Through log file analysis, we track bot behavior and adjust robots.txt rules to maximize indexing efficiency and ensure Googlebot allocates resources to your revenue-generating pages.</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- FAQ Section - STAGGERED LIST LAYOUT -->
+	<section class="py-32 px-6 bg-white/[0.01] border-y border-white/5">
+		<div class="max-w-6xl mx-auto">
+			<div class="reveal mb-20">
+				<h2 class="text-4xl md:text-6xl font-black text-white uppercase tracking-tighter mb-4">Technical SEO <span class="text-blue-500">Intelligence.</span></h2>
+				<p class="text-slate-400 font-bold uppercase tracking-widest text-[10px]">Frequently asked questions about our methodology</p>
+			</div>
+
+			<div class="space-y-8">
+				<!-- FAQ 1 - Full Width with Blue Accent -->
+				<div class="reveal bg-[#0a0a0a] border border-white/10 p-10 rounded-[2rem] hover:border-blue-500/20 transition-all active">
+					<div class="flex items-start gap-4">
+						<span class="text-blue-500 font-black text-4xl leading-none mt-1">01</span>
+						<div>
+							<h3 class="text-2xl font-bold text-white mb-4 tracking-tight">How does Natural Language Processing improve SEO outcomes?</h3>
+							<p class="text-slate-300 leading-relaxed text-lg">
+								NLP allows us to analyze search queries beyond literal keyword matching. We use transformer models (similar to Google's BERT) to understand semantic intent, entity relationships, and contextual meaning. This enables content optimization for what users actually want to know, not just what they type. By mapping your content to semantic topic clusters rather than isolated keywords, we align with how modern search engines interpret relevance through neural network analysis.
+							</p>
+						</div>
+					</div>
+				</div>
+
+				<!-- FAQ 2 - Offset with Icon -->
+				<div class="reveal md:ml-12 glass p-10 rounded-[2rem] hover:border-blue-500/30 transition-all">
+					<div class="flex items-start gap-4 mb-4">
+						<div class="w-10 h-10 bg-blue-600/10 border border-blue-500/20 rounded-lg flex items-center justify-center shrink-0">
+							<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-label="AI vs Traditional"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm0 18a8 8 0 1 1 8-8 8 8 0 0 1-8 8z"></path><path d="M12 6v6l4 2"></path></svg>
+						</div>
+						<span class="text-blue-500 font-black text-4xl leading-none">02</span>
+					</div>
+					<h3 class="text-2xl font-bold text-white mb-4 tracking-tight">What's the difference between traditional technical SEO and your AI-driven approach?</h3>
+					<p class="text-slate-300 leading-relaxed text-lg">
+						Traditional audits rely on checklist-based recommendations (fix meta tags, add alt text, increase page speed). Our AI systems simulate thousands of search scenarios, predict ranking probability based on topical authority scores, and identify non-obvious optimization opportunities through pattern recognition. We don't just find technical errors—we architect information hierarchies that match Google's understanding of semantic relevance, using machine learning to prioritize fixes by actual ranking impact.
+					</p>
+				</div>
+
+				<!-- FAQ 3 - Full Width Dark Background -->
+				<div class="reveal bg-[#0a0a0a] border border-white/10 p-10 rounded-[2rem] hover:border-blue-500/20 transition-all">
+					<div class="flex items-start gap-6">
+						<span class="text-blue-500 font-black text-4xl leading-none mt-1">03</span>
+						<div>
+							<h3 class="text-2xl font-bold text-white mb-4 tracking-tight">How do you optimize for Core Web Vitals without sacrificing design quality?</h3>
+							<p class="text-slate-300 leading-relaxed text-lg">
+								Performance optimization isn't about removing visual elements—it's about intelligent delivery. We implement lazy loading for below-the-fold content, use next-gen image formats (WebP/AVIF) with responsive srcset attributes, and architect critical rendering paths that prioritize above-the-fold LCP elements. CSS-in-JS strategies and font subsetting eliminate render-blocking resources. The result: visually rich experiences that score 90+ on Lighthouse Performance while maintaining brand aesthetics.
+							</p>
+						</div>
+					</div>
+				</div>
+
+				<!-- FAQ 4 - Offset with Gradient Border -->
+				<div class="reveal md:ml-12 border border-blue-500/30 bg-gradient-to-br from-blue-600/10 to-transparent p-10 rounded-[2rem] hover:from-blue-600/20 transition-all">
+					<div class="flex items-start gap-4 mb-4">
+						<span class="text-blue-400 font-black text-4xl leading-none">04</span>
+						<div class="w-10 h-10 bg-blue-600/20 border border-blue-500/30 rounded-lg flex items-center justify-center shrink-0">
+							<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#60a5fa" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-label="Schema Structured Data"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+						</div>
+					</div>
+					<h3 class="text-2xl font-bold text-white mb-4 tracking-tight">Why does Schema.org structured data matter for e-commerce sites?</h3>
+					<p class="text-slate-300 leading-relaxed text-lg">
+						Structured data transforms your product pages into rich search results with star ratings, pricing, availability, and review counts displayed directly in SERPs. This dramatically increases click-through rates (often 20-40% lifts) and qualifies your pages for Google Shopping integration. More critically, it feeds Google's Knowledge Graph, helping the search engine understand product relationships, brand authority, and category hierarchies—signals that influence ranking algorithms beyond traditional text analysis.
+					</p>
+				</div>
 			</div>
 		</div>
 	</section>
